@@ -1,0 +1,35 @@
+.errorText{
+    color:red;
+    padding-left: 12px;
+  }
+  .processData{
+  /*   margin-left: 159px; */
+    padding-top: 25px;
+    margin-bottom: 20px;
+    margin-right: 260px;
+    background-color: #f5f5f5;
+    padding-bottom: 90px;
+    padding-left: 50px;
+  }
+
+  .inputParams{
+    /*   margin-left: 161px; */
+      padding-top: 25px;
+      margin-bottom: 20px;
+      margin-right: 260px;
+      background-color: #f5f5f5;
+      padding-bottom: 90px;
+      padding-left: 50px;
+    }
+  .nextPageImg{
+    cursor: pointer;
+    float: right;
+    padding-right: 25%;
+    height: 46px;
+  }
+  .previousPageImg{
+    cursor: pointer;
+    float: left;
+    margin-top: 19px;
+    height: 46px; 
+  }

@@ -1,0 +1,87 @@
+.alignComponent{
+    /*   margin-left: 220px; */
+  }
+  .errorText{
+      color:red;
+    }
+  .registerFormDiv{
+     /*  margin-left: 101px; */
+     margin-top: 20px;
+     margin-left: 29%;
+      border: 1px solid darkgrey;
+      background-color: #f5f5f5;
+      margin-bottom: 20px;
+  }
+  .tableAlign{
+      width: 85%; 
+      margin-top: 20px;
+      margin-left: 30px;
+      margin-bottom: 26px;
+  }
+  
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    
+   /*  tr:nth-child(even) {
+      background-color: gainsboro;
+    } */
+   
+  .ngx-pagination {
+    margin-left: 248px !important;
+    margin-bottom: 74px !important;
+    margin-top: -69px !important;
+  }
+  
+  .registerbtn{
+   width: 19%;
+  }
+  
+  .selectedUsername{
+    font-weight: 100 !important;
+    font-size: 20px !important;
+  }
+  
+  .userActions{
+    padding-top: 14px;
+  /*   padding-bottom: 30px; */
+    margin-left: 29%;
+    padding-left: 29px;
+  } 
+  @media (min-width: 992px)
+  {
+  .col-md-6 {
+      width: 40%;
+  }
+  }
+  
+  .Processheader{
+    padding: 1px 12px;
+    background: cadetblue;
+    /* margin-right: 501px; */
+    margin-top: -2  0px;
+    /* margin-left: 10px; */
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  }
+  
+  .PaginatrionDiv{
+    margin-left: 36%;
+    margin-top: 22px;
+  }
+  
+  table.center{
+    margin-left:   auto;
+    margin-right: auto;
+  }
+  
+  .labels{
+    margin-left: 13px;
+  }

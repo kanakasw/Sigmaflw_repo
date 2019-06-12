@@ -1,0 +1,69 @@
+@color_1: #97d077;
+
+.activity-summary-card-wrapper {
+	>table {
+		tr {
+			border-bottom-style: inset;
+		}
+	}
+}
+#tabContainer {
+	>md-pagination-wrapper {
+		background-color: white;
+		width: auto !important;
+	}
+}
+md-tabs-canvas {
+	border-bottom: 1px solid #e8e8e8;
+}
+md-tabs {
+	padding-left: 10px;
+	padding-top: 10px;
+	.md-tab.md-active {
+		border-radius: 6px;
+		border: 1px solid #e8e8e8;
+		color: @color_1;
+	}
+	.md-tab.md-focused {
+		border-radius: 6px;
+		border: 1px solid #e8e8e8;
+		color: @color_1;
+	}
+}
+md-tab-content {
+	overflow: scroll !important;
+}
+ng-md-icon {
+	animation-fill-mode: both;
+}
+md-pagination-wrapper {
+	width: auto !important;
+	>md-tab-item {
+		width: auto !important;
+	}
+}
+
+.switch {
+  background: #f10b0b !important;
+  width: 80px !important;
+}
+
+.switch.checked small {
+  left: 51px;
+}
+.switch.checked {
+  background: rgb(100, 189, 99) !important;
+}
+
+md-dialog md-dialog-content{
+  overflow: scroll !important;
+}
+md-dialog
+{
+  overflow: scroll !important;
+  width: 50% !important;
+  height: 50% !important;
+  top: 25% !important;
+  margin: 0 auto !important;
+  position: relative !important;
+}

@@ -1,0 +1,68 @@
+<div class="executions-summary-containers">
+  <div class="execution-summary-cards-container">
+    <h4 style="text-align:center">Execution History (Previous 10 runs)</h4>
+    <div class="execution-summary-card-wrapper">
+      <!--  *ngFor="let integrationProcessExecution of integrationProcessExecutions | orderBy:'integrationProcessExecutionID'" -->
+
+      <!--  <mat-card class="execution-summary-cards"
+        *ngIf="integrationProcessExecution.integrationProcessID == currentProcessID"
+        (click)="getAllActivityExecutionsByIntegrationProcessExecutionID(integrationProcessExecution.integrationProcessExecutionID)">
+        <mat-card-content>
+          <table>
+            <tr> 
+              <td *ngIf="!toggleObject[integrationProcessExecution.integrationProcessExecutionID]">
+                <mat-icon size="18" style="margin-left: -21px;">keyboard_arrow_right</mat-icon>
+              </td>
+              <td *ngIf="toggleObject[integrationProcessExecution.integrationProcessExecutionID]">
+                <mat-icon size="18" style="margin-left: -21px;">keyboard_arrow_down</mat-icon>
+              </td>
+              <td class="cardTd">Execution ID : {{integrationProcessExecution.integrationProcessExecutionID }}</td>
+              <td class="cardTd">StartTime : {{integrationProcessExecution.executionStartTime | date }}</td>
+              <td class="cardTd">FinishTime : {{integrationProcessExecution.executionFinishTime | date }}</td>
+              <td class="cardTd">{{integrationProcessExecution.status}}</td>
+            </tr>
+          </table>
+        </mat-card-content>
+      </mat-card> -->
+
+      <!--   <div id="execution-summary-{{integrationProcessExecution.integrationProcessExecutionID}}"
+        class="slideable summary-details-card">
+ -->
+      <div class="activity-summary-card-wrapper">
+        <table class="mat-elevation-z8 tableAlign mat-table center">
+          <thead style="background: darkseagreen;">
+            <th>Serial Number</th>
+            <th>Start Time</th>
+            <th>Finish Time</th>
+            <th>Status</th>
+            <th>Outcome</th>
+          </thead>
+          <ng-container *ngIf="integrationProcessExecutions">
+            <tr class="activity-execution-table-row"
+              *ngFor="let integrationProcessExecution of integrationProcessExecutions | orderBy:'integrationProcessExecutionID' | paginate: { itemsPerPage: 10, currentPage: p }">
+              <td> {{integrationProcessExecution.integrationProcessExecutionID }}</td>
+              <td> {{integrationProcessExecution.executionStartTime | date: 'MMM d, y, h:mm:ss a'}}</td>
+              <td> {{integrationProcessExecution.executionFinishTime | date: 'MMM d, y, h:mm:ss a' }} </td>
+              <td *ngIf="integrationProcessExecution.status == 'ERROR'">Error</td>
+              <td *ngIf="integrationProcessExecution.status == 'COMPLETED'">Completed</td>
+              <td *ngIf="integrationProcessExecution.status == 'PROCESSING'">Processing</td>
+
+              <!-- Display execution outcome popup on click -->
+              <td><a href="javascript:void(0)"
+                  (click)="getAllActivityExecutionsByIntegrationProcessExecutionID(integrationProcessExecution.integrationProcessExecutionID);">
+                  <mat-icon style="fill:inherent" size="18">receipt</mat-icon>
+                </a>
+              </td>
+            </tr>
+          </ng-container>
+        </table>
+        <div *ngIf="!isIntegrationProcessExecution" class="noRecords">
+          <p>No records to display</p>
+        </div>
+        <div class="paginationDiv" id="parentActions">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

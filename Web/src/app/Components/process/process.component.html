@@ -1,0 +1,159 @@
+<!-- Process Tabs -->
+<div ng-cloak style="background-color:white">
+    <div class="Processheader">
+        <h4 style="color: floralwhite;font-weight: 600; cursor: pointer;" (click)="redirectToProcessDetails()">Process :
+            {{integrationProcess.integrationProcessName}}</h4>
+    </div>
+    <mat-tab-group class="md-accent1 md-dynamic-height" animationDuration="0ms" [selectedIndex]="selectedIndex"
+        (selectedTabChange)="tabClick($event);" style="margin-top: 9px;
+    margin-left: 3px;margin-right: 200px;">
+        <mat-tab label="Setup" matTooltip="Info about the action" class="md-pagination-wrapper processtab"
+            [matTooltipPosition]="below" (click)="getTabExecutionUiSref(integrationProcess.integrationProcessName)">
+            <div class="row">
+                <div class="col-md-3" layout="row" flex="100">
+                    <div flex="25">
+                        <h3 style="padding-left: 65px;">Activities</h3>
+                        <ul class="navUl">
+                            <div *ngIf="integrationProcess.activities" class="list list-inset searchclass"
+                                [ngClass]="{'active':isdiplay}">
+                                <ul class="subNavUl" [ngClass]="{'ul-active': isActive(activity)}"
+                                    *ngFor="let activity of integrationProcess.activities | orderBy:'activityID'">
+                                    <li class="navUl-li" id="activity-{{$index}}" (click)="select(activity)"
+                                        [ngClass]="{'li-active': isActive(activity)}">
+                                        <a>
+                                            <mat-icon style="fill:inherent" size="18">local_activity</mat-icon>
+                                            {{ activity.activityName | convertCaseFilter}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div id="processView" class="col-md-9 processDiv" flex="75" *ngIf="showProcess">
+                    <label>
+                        <h4> PROCESS DETAILS</h4>
+                    </label>
+                    <div style="padding-bottom: 35px;">
+                        <form id="integrationProcessForm">
+                            <table id="table4" class="integrationinfo" style="line-height:3;margin-left: -42px;">
+                                <tr *ngFor="let item of objectKeys(integrationProcess)">
+                                    <ng-container
+                                        *ngIf="item!='activities' && item!='integrationProcessExecutions' && item!='subscriberID' ">
+                                        <!-- item != 'integrationProcessID' -->
+                                        <td *ngIf="item != 'userId'">
+                                            {{item | convertCaseFilter }}
+                                        </td>
+                                        <td *ngIf="item == 'userId'">
+                                            Integration Process Owner
+                                        </td>
+                                        <td *ngIf="item == 'userId' && LoggedInUserRole  == 'ADMIN'">
+                                            <select style="width: 357px;height: 34px;" [(ngModel)]="processOwner"
+                                                [ngModelOptions]="{standalone : true}"
+                                                (ngModelChange)="changeProcessOwner(processOwner)"
+                                                [disabled]="currentProcessState == 'Processing'">
+                                                <option value="{{processOwner}}">
+                                                    {{processOwnername}}
+                                                </option>
+                                                <option *ngFor="let user of users" value="{{user.userId}}">
+                                                    {{user.login}}
+                                                </option>
+                                            </select>
+                                        </td>
+                                        <td *ngIf="item == 'userId' && LoggedInUserRole  == 'APP_USER'">
+                                            {{processOwnername}}
+                                        </td>
+                                        <td
+                                            *ngIf="item=='integrationProcessUniqueReference' || item=='integrationProcessName' || item == 'integrationProcessID'">
+                                            {{integrationProcess[item]}}
+                                        </td>
+                                        <td *ngIf="item == 'createdDate'||item == 'modifiedDate'">
+                                            {{integrationProcess[item] | date: 'MMM d, y, h:mm:ss a'}}
+                                        </td>
+                                        <td
+                                            *ngIf="item!='enabled' && item!='integrationProcessUniqueReference' && item!='integrationProcessName' && item != 'integrationProcessID' && item != 'createdDate' && item != 'modifiedDate' && item != 'userId'">
+                                            <!--   value1_{{item}} -->
+                                            <input id="value1_{{item}}" type="text" class="textbox" value="value"
+                                                name="{{item}}" [(ngModel)]="integrationProcess[item]"
+                                                (ngModelChange)="submitIntegrationProcess=true;" required="true" [disabled]="currentProcessState == 'Processing'" />
+
+                                            <div *ngIf=" submitIntegrationProcess">
+                                                <!-- <div class="messages error-messages" *ngIf="innerForm.value1_{{item}}.error.required">{{item |convertCaseFilter
+                                                    }} is Required
+                                                </div> -->
+                                            </div>
+                                        </td>
+                                        <td
+                                            *ngIf="item=='enabled' && item!='integrationProcessUniqueReference' && item!='integrationProcessName' && item != 'integrationProcessID' && item != 'createdDate' && item != 'modifiedDate'">
+                                            <mat-slide-toggle [(ngModel)]="integrationProcessEnabled"
+                                                name={{integrationProcessEnabled}} [disabled]="currentProcessState == 'Processing'"></mat-slide-toggle>
+                                        </td>
+                                    </ng-container>
+                                </tr>
+                            </table>
+                        </form>
+                        <br>
+                        <div style="text-align:center">
+                            <button mat-button *ngIf="currentProcessState != 'Processing'" class="button md-accent md-raised" (click)="executeProcess() "
+                                style="margin-left: -65px;width: 160px;">EXECUTE
+                            </button>
+                            <button mat-button *ngIf="currentProcessState == 'Processing'" [disabled]="currentProcessState == 'Processing'" class="button md-accent md-raised" (click)="executeProcess() "
+                                style="margin-left: -65px;width: 160px;">PROCESSING
+                            </button>
+                            <button mat-button [disabled]="currentProcessState == 'Processing'" class="button md-accent md-raised" style="left: 35px;width: 160px;"
+                                (click)="updateIntegrationProcessSetup()">UPDATE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="activitySelected">
+                    <app-activity [activityId]="activityId"></app-activity>
+                </div>
+
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Executions" class="md-pagination-wrapper processtab" matTooltip="Process Execution">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="activity-card" layout="row" flex="100">
+                        <div flex="25">
+                            <!--  <h3 style="padding-left: 62px;">Executions</h3> -->
+                            <div class="execution-history-wrapper" style="padding-top:20px;">
+                                <ul class="subNavUl" [ngClass]="{'ul-active': isActive('Current Execution Summary')}">
+                                    <li class="navUl-li"
+                                        (click)="selectExecutionSummaryItem('Current Execution Summary')"
+                                        [ngClass]="{'li-active': isActive('Current Execution Summary')}">
+                                        <a
+                                            (click)="getCurrentExecutionUiSref(integrationProcess.integrationProcessName)">
+                                            <mat-icon style="fill:inherent" size="18">local_activity</mat-icon>
+                                            Current Execution Detail
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="subNavUl" [ngClass]="{'ul-active': isActive('Execution History Summary')}">
+                                    <li class="navUl-li"
+                                        (click)="selectExecutionSummaryItem('Execution History Summary')"
+                                        [ngClass]="{'li-active': isActive('Execution History Summary')}">
+                                        <a
+                                            (click)="getExecutionHistoryUiSref(integrationProcess.integrationProcessName)">
+                                            <mat-icon style="fill:inherent" size="18">local_activity</mat-icon>
+                                            Previous Executions Detail
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9" *ngIf="selectedExecution == 'Current Execution Summary'">
+                    <app-current-execution></app-current-execution>
+                    <!--  <app-execution-summary selectedExecution = "{{selectedExecution}}"></app-execution-summary> -->
+                </div>
+                <div class="col-md-9" *ngIf="selectedExecution == 'Execution History Summary'">
+                    <app-execution-summary></app-execution-summary>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

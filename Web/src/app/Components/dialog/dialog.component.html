@@ -1,0 +1,11 @@
+<div *ngIf="DialogData.deleteUser">
+  <div class="jumbotron dialog">
+    <p>Are you sure, you want to delete user ?</p>
+    <div>
+        <button mat-button class="button md-accent md-raised" (click)="onDelete()" style="margin-left:-34px; width:115px;">DELETE
+          </button>
+          <button mat-button class="button md-accent md-raised" (click)="onNoClick()" style="left: 38px;width:115px;">CANCEL
+          </button>
+    </div>
+  </div>
+</div>

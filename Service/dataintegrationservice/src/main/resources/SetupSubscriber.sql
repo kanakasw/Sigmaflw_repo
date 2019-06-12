@@ -1,0 +1,1 @@
+INSERT INTO  subscriber (ClientID, ClientSecret, CreatedDate, Login, ModifiedDate, Password, SubscriberUniqueKey,SubscriberName) VALUES ('172d4260-4802-11e6-beb8-9e71128cae77', 'e4feeb68-4801-11e6-beb8-9e71128cae77', NULL, 'ibm', NULL, '12345', '9c7065e4-4cc9-11e6-beb8-9e71128cae77','Z Bank');

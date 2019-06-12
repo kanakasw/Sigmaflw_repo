@@ -1,0 +1,155 @@
+<div>
+  <div class="Processheader">
+    <h4 *ngIf="showdiv == 'createProcess' && !usermodifying" style="color: floralwhite;font-weight: 600;">Create Process
+    </h4>
+    <h4 *ngIf="showdiv == 'modifyProcess'" style="color: floralwhite;font-weight: 600;">Modify Process</h4>
+  </div>
+  <div *ngIf="showdiv == 'createProcess' || showdiv == 'modifyProcess'">
+    <form [formGroup]="processForm" style="margin-top: 27px;">
+      <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="tabClick($event);">
+        <mat-tab label="Process Data" matTooltip="Process Data">
+          <div class="processData">
+            <div class="form-group">
+              <label for="proecessName" style="margin-left: 13px;">Process Name</label>
+              <input type="text" formControlName="proecessName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.proecessName.errors }"
+                style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+              <div *ngIf="submitted && f.proecessName.errors" class="invalid-feedback">
+                <div *ngIf="f.proecessName.errors.required" class="errorText">Process name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="processOwner" style="margin-left: 13px;">Process Owner</label>
+              <select formControlName="processOwner" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.processOwner.errors }" style="width: 320px;height: 37px;">
+                <option value="">Select the Process Owner</option>
+                <option *ngFor="let user of users" value="{{user.userId}}">
+                  {{user.login}}
+                </option>
+              </select>
+              <div *ngIf="submitted && f.processOwner.errors" class="invalid-feedback">
+                <div *ngIf="f.processOwner.errors.required" class="errorText">Process owner is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="activityType" style="margin-left: 13px;">Activity Type</label>
+              <select formControlName="activityType" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.activityType.errors }" style="width: 320px;height: 37px;">
+                <option value="">Select the activity type</option>
+                <option value="INTEGRATION">Integration</option>
+                <option value="END_EXECUTION">End Execution</option>
+              </select>
+              <div *ngIf="submitted && f.activityType.errors" class="invalid-feedback">
+                <div *ngIf="f.activityType.errors.required" class="errorText">Activity type is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="status" style="margin-left: 13px;">Enabled</label>
+              <mat-slide-toggle [(ngModel)]="integrationProcessEnabled" [ngModelOptions]="{standalone : true}"
+                style="margin-left:130px;"></mat-slide-toggle>
+            </div>
+
+            <div class="form-group">
+              <label style="margin-left: 13px;">Trigger Type</label>
+              <select [(ngModel)]="selectedTriggerType" [ngModelOptions]="{standalone: true}"
+                (ngModelChange)="changeTriggerType(selectedTriggerType)" class="form-control"
+                style="width: 320px;height: 37px;">
+                <option value="SCHEDULED">SCHEDULED</option>
+                <option value="MANUAL">MANUAL</option>
+              </select>
+            </div>
+
+            <div *ngIf="selectedTriggerType == 'SCHEDULED'" style="padding-left:15px;">
+              <span><b>Schedule Setup</b></span>
+
+              <div id="cron-gen-div" style="width: 679px;">
+                <cron-editor [(cron)]="cronExpression " [options]="cronOptions">
+
+                </cron-editor>
+                <!-- <div *ngIf="getCron(activity[item])">
+                Cron Expression: {{currentCron}}
+              </div> -->
+              </div>
+            </div>
+            <div class="form-group" style="padding-left: 70px;padding-top: 20px;">
+              <button mat-button *ngIf="!processmodifying" type="submit" class="button md-accent md-raised"
+                [disabled]="loading" (click)="onSubmit()" style="margin-left: 4px;
+                  width: 87px;
+                  height: 33px;">Create
+              </button>
+              <button mat-button *ngIf="processmodifying" type="submit" class="button md-accent md-raised"
+                [disabled]="loading" (click)="updateProcess()" style="margin-left: 4px;
+                  width: 87px;
+                  height: 33px;">Update
+              </button>
+              <img *ngIf="loading" class="pl-3"
+                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              <!--  <a routerLink="/home" class="btn btn-link cancelbtn">Cancel</a> -->
+
+              <button mat-button class="button md-accent md-raised" (click)="Cancel()" style="margin-left: 12px;width: 87px;
+                  height: 33px;">Cancel</button>
+            </div>
+            <!-- <img src="../../assets/images/nextPage.png" alt="next" class="nextPageImg" (click)="selectedIndex = 1" />
+           -->
+          </div>
+        </mat-tab>
+
+        <!--     <mat-tab label="Input Parameters"> 
+          <div class="inputParams">
+            <div class="form-group">
+              <label for="inputFile" style="margin-left: 13px;">Selelct input file path</label>
+              <input type="file" formControlName="inputFile" class="form-control" (change)="getInputFileName($event, 'inputFile')"
+                [ngClass]="{ 'is-invalid': submitted && f.inputFile.errors }"
+                style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+              <div *ngIf="submitted && f.inputFile.errors" class="invalid-feedback">
+                <div *ngIf="f.inputFile.errors.required" class="errorText">Input File is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="outputFile" style="margin-left: 13px;">Selelct output file path</label>
+              <input type="file" formControlName="outputFile" class="form-control" (change)="getInputFileName($event, 'outputFile')"
+                [ngClass]="{ 'is-invalid': submitted && f.outputFile.errors }"
+                style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+              <div *ngIf="submitted && f.outputFile.errors" class="invalid-feedback">
+                <div *ngIf="f.outputFile.errors.required" class="errorText">Output File is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ktrFile" style="margin-left: 13px;">Selelct Workflow file path</label>
+              <input type="file" formControlName="ktrFile" class="form-control" (change)="getInputFileName($event, 'ktrFile')"
+                [ngClass]="{ 'is-invalid': submitted && f.ktrFile.errors }"
+                style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+              <div *ngIf="submitted && f.ktrFile.errors" class="invalid-feedback">
+                <div *ngIf="f.ktrFile.errors.required" class="errorText">ktr File is required</div>
+              </div>
+            </div>
+
+            <div class="form-group" style="padding-left: 70px;">
+              <button mat-button *ngIf="!processmodifying" type="submit" class="button md-accent md-raised"
+                [disabled]="loading" (click)="onSubmit()" style="margin-left: 4px;
+                  width: 87px;
+                  height: 33px;">Create
+              </button>
+              <button mat-button *ngIf="processmodifying" type="submit" class="button md-accent md-raised"
+                [disabled]="loading" (click)="updateProcess()" style="margin-left: 4px;
+                  width: 87px;
+                  height: 33px;">Update
+              </button>
+              <img *ngIf="loading" class="pl-3"
+                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+              <button mat-button class="button md-accent md-raised" (click)="Cancel()" style="margin-left: 12px;width: 87px;
+                  height: 33px;">Cancel</button>
+            </div>
+            <img src="../../assets/images/PreviousPage.png" alt="next"  class="previousPageImg" (click)="selectedIndex = 0" />
+          </div>
+        </mat-tab> -->
+      </mat-tab-group>
+    </form>
+  </div>
+  <div *ngIf="showdiv == 'modifyProcess'">
+
+  </div>
+</div>

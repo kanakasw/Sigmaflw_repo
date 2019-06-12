@@ -1,0 +1,231 @@
+<div id="tabContainer" style="line-height: 3;margin-top: 14px;" ng-cloak>
+
+    <mat-tab-group>
+        <mat-tab label="Schedule" matTooltip="{{tabname}}">
+            <div style="background-color:#f5f5f5;">
+                <table>
+                    <tr *ngFor="let item of objectKeys(activity)">
+                        <ng-container
+                            *ngIf="item != 'processingSpecification'  && item != 'activityID' && item !='integrationProcessID' && item!='activityKey'">
+                            <td *ngIf="item == 'triggerType'">{{item | convertCaseFilter}}</td>
+                            <td *ngIf="item == 'triggerType' && activity['causesNewProcessExecution'] == true">
+                                <select (ngModelChange)="changeTriggerType(selectedTriggerType)" class="triggerDropdown"
+                                    [(ngModel)]="selectedTriggerType">
+                                    <option *ngFor="let name of triggerTypeList" [ngValue]="name">{{name}}</option>
+                                </select>
+                            </td>
+                            <td *ngIf="item == 'triggerType' && activity['causesNewProcessExecution'] == false">
+                                {{activity[item] | convertCaseFilter}}
+                            </td>
+                            <td *ngIf="item != 'triggerType' && item != 'scheduleSetup'">
+                                {{item | convertCaseFilter}}
+                            </td>
+                            <td
+                                *ngIf="item != 'triggerType' && item != 'scheduleSetup' && item != 'createdDate' && item != 'modifiedDate'">
+                                {{activity[item] }}</td>
+
+                            <td *ngIf="item == 'createdDate' || item == 'modifiedDate'">
+                                {{activity[item] | date: 'MMM d, y, h:mm:ss a'}}
+                            </td>
+
+                            <td colspan="2" *ngIf="item == 'scheduleSetup' && selectedTriggerType == 'SCHEDULED'">
+                                <span style="text-align: center;">{{item | convertCaseFilter }}</span>
+
+                                <div id="cron-gen-div" style="width: 679px;">
+                                    <cron-editor [(cron)]="cronExpression " [options]="cronOptions">
+
+                                    </cron-editor>
+                                    <div *ngIf="getCron(activity[item])">
+                                        Cron Expression: {{currentCron}}
+                                    </div>
+                                </div>
+                                <button mat-button class="md-raised md-primary button"
+                                    (click)="reschedule(activity.activityID)">Update
+                                    Schedule
+                                </button>
+                            </td>
+                        </ng-container>
+                    </tr>
+                </table>
+            </div>
+        </mat-tab>
+        <mat-tab label="Specification" matTooltip="Processing Specification"
+            (click)="getInputParameter(activity.activityID)">
+            <div style="background-color:#f5f5f5; padding-bottom: 20px;">
+                <div *ngIf="hasProcessingSpecification">
+                    <table>
+                        <tr *ngFor="let item of objectKeys(processingspec)">
+                            <ng-container *ngIf="item != 'inputParameters' && item != 'outputParameters'">
+
+                                <td *ngIf="item == 'workflowType'">{{item | convertCaseFilter }}</td>
+                                <td *ngIf="item == 'workflowType'">
+                                    <label class="specs">{{selectedWorkFlowType}}</label>
+                                </td>
+                                <td
+                                    *ngIf="item != 'workflowType' && item != 'ActivityExecutionID' && item != 'StepToTrigger'">
+                                    {{item |convertCaseFilter }}</td>
+
+
+                                <td *ngIf="item == 'outputParameters'">
+                                    <label class="specs">{{processingspec[item]}} -</label>
+                                </td>
+                                <td
+                                    *ngIf="item=='workflowFilePath' && item!='workflowType' && item != 'StepToTrigger' && item != 'EventToTrigger' && item != 'outputParameters'">
+                                    <label class="specs">{{processingspec[item]}}</label>
+                                </td>
+                            </ng-container>
+                        </tr>
+                    </table>
+                </div>
+                <div *ngIf="inputparameter" form="inputParameterForm" style="margin-top: -16px;">
+                    <table>
+
+                        <tr *ngFor="let item of objectKeys(inputparameter)">
+                            <ng-container>
+                                <td>{{item | convertCaseFilter}}</td>
+
+                                <td>
+                                    <label class="specs">{{inputparameter[item]}}</label>
+                                </td>
+                            </ng-container>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--  <button mat-button class="button processBtn"
+                (click)="submitProcessingSpec=true; updateProcessingSpecification();
+                submitInputParameter=true; updateInputParameter(activity.activityID,processingspec[inputparameter]);" style="width:160px;" disabled>
+                Update
+            </button> -->
+            </div>
+        </mat-tab>
+        <!-- for updating process specifications -->
+        <!--  <mat-tab label="Specification" matTooltip="Processing Specification"
+            (click)="getInputParameter(activity.activityID)">
+            <div style="background-color:#f5f5f5; padding-bottom: 20px;">
+                <div *ngIf="hasProcessingSpecification">
+                    <table>
+                        <tr *ngFor="let item of objectKeys(processingspec)">
+                            <ng-container *ngIf="item != 'inputParameters'">
+
+                                <td *ngIf="item == 'workflowType'">{{item | convertCaseFilter }}</td>
+                                <td *ngIf="item == 'workflowType'">
+                                    <select (ngModelChange)="changeWorkFlowType(selectedWorkFlowType)"
+                                        [(ngModel)]="selectedWorkFlowType">
+                                        <option *ngFor="let name of workflowTypeList" [ngValue]="name">{{name}}</option>
+                                    </select>
+                                </td>
+                                <td
+                                    *ngIf="item != 'workflowType' && item != 'ActivityExecutionID' && item != 'StepToTrigger'">
+                                    {{item |convertCaseFilter }}</td>
+
+
+                                <td *ngIf="item == 'outputParameters'">
+                                    <input type="text" class="textbox" value="value"
+                                        [(ngModel)]="processingspec[item]" />
+                                </td>
+                                <td
+                                    *ngIf="item!='workflowType' && item != 'StepToTrigger' && item != 'EventToTrigger' && item != 'outputParameters'">
+                                    <form id="innerForm">
+
+                                        <div *ngIf="item=='workflowFilePath'" style="height: 50px;" mass-autocomplete>
+                                            <input *ngIf="item=='workflowFilePath'"
+                                                mass-autocomplete-item="ac_option_delimited" type="text" class="textbox"
+                                                value="processingspec[item]" [(ngModel)]="processingspec[item]"
+                                                required="true" (ngModelChange)="submitProcessingSpec=true"
+                                                name="processingspec[item]" />
+
+                                            <div *ngIf="submitProcessingSpec">
+                                                <div class="messages error-messages" *ngIf="innerForm.$error.required">{{item | convertCaseFilter 
+                                                        }} is Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
+                            </ng-container>
+                        </tr>
+                    </table>
+                </div>
+                <div *ngIf="inputparameter" form="inputParameterForm" style="margin-top: -23px;">
+                    <table>
+
+                        <tr *ngFor="let item of objectKeys(inputparameter)">
+                            <ng-container>
+                                <td>{{item | convertCaseFilter}}</td>
+
+                                <td>
+                                    <form id="innerForm">
+                                        <div>
+                                            <input id="inputParameter" list="inputParameterList" type="text"
+                                                class="textbox" value="inputparameter[item]"
+                                                [(ngModel)]="inputparameter[item]"
+                                                (ngModelChange)="submitInputParameter=true" name="inputparameter[item]">
+                                            <datalist id="inputParameterList">
+                                                <option *ngFor="let options of states" value="{{options}}">{{options}}
+                                                </option>
+                                            </datalist>
+
+                                            <div *ngIf="innerForm && submitInputParameter">
+                                                <div class="messages error-messages" *ngIf="innerForm.$error.required">{{key | convertCaseFilter
+                                                            }} is Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
+                            </ng-container>
+                        </tr>
+                    </table>
+                </div>
+
+                <button mat-button class="button processBtn"
+                    (click)="submitProcessingSpec=true; updateProcessingSpecification();
+                    submitInputParameter=true; updateInputParameter(activity.activityID,processingspec[inputparameter]);" style="width:160px;" disabled>
+                    Update
+                </button>
+            </div>
+        </mat-tab> -->
+        <!--  <mat-tab label="Input Parameters" matTooltip="Input Parameters"
+            (click)="getInputParameter(activity.activityID)">
+            <div *ngIf="inputparameter" form="inputParameterForm"
+                style="background-color:#f5f5f5; padding-bottom: 20px;">
+                <table>
+                  
+                    <tr *ngFor="let item of objectKeys(inputparameter)">
+                        <ng-container>
+                            <td>{{item | convertCaseFilter}}</td>
+                            
+                            <td>
+                                <form id="innerForm">
+                                    <div>
+                                        <input id="inputParameter" list="inputParameterList" type="text" class="textbox"
+                                            value="inputparameter[item]" [(ngModel)]="inputparameter[item]"
+                                            (ngModelChange)="submitInputParameter=true" name="inputparameter[item]">
+                                        <datalist id="inputParameterList">
+                                            <option *ngFor="let options of states" value="{{options}}">{{options}}
+                                            </option>
+                                        </datalist>
+
+                                        <div *ngIf="innerForm && submitInputParameter">
+                                            <div class="messages error-messages" *ngIf="innerForm.$error.required">{{key | convertCaseFilter
+                                                    }} is Required
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </ng-container>
+                    </tr>
+                </table>
+                <button mat-button class="button md-accent md-raised processBtn" style="width:160px;"
+                    (click)="submitInputParameter=true; inputParameterForm.$invalid ? '': updateInputParameter(activity.activityID,inputparameter);">Update
+                </button>
+            </div>
+            <div *ngIf="inputparameter == undefined">
+
+            </div>
+        </mat-tab> -->
+    </mat-tab-group>
+
+</div>

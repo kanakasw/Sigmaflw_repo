@@ -1,0 +1,10 @@
+.classpath/
+.settings/
+.mvn/
+bin/
+target/
+/build/
+.project
+.classpath
+/integration-files/*/*/Exec_*
+/integration-files/*/*/Input/*

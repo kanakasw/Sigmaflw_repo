@@ -1,0 +1,38 @@
+<div class="Processheader">
+  <h4 style="color: floralwhite;font-weight: 600;">User List
+  </h4>
+</div>
+<table class="mat-elevation-z8 tableAlign mat-table center">
+  <thead style="background: darkseagreen;">
+    <th>Action</th>
+    <th>UserName</th>
+    <th>Role</th>
+    <th>Status</th>
+    <th>Email</th>
+  </thead>
+  <tr *ngFor="let item of dataSource | paginate: { itemsPerPage: 8, currentPage: p }">
+    <ng-container *ngIf="item.status != 'DELETED'">
+      <td><input type="radio" name="useraction" (click)="selectUser(item)" /></td>
+      <td style="text-align:left;">{{item.login}}</td>
+      <td *ngIf="item.role == 'ADMIN'">Admin</td>
+      <td *ngIf="item.role == 'APP_USER'">User</td>
+      <td *ngIf="item.status == 'ACTIVE'">Active</td>
+      <td *ngIf="item.status == 'INACTIVE'">Inactive</td>
+      <td style="text-align: left;">{{item.email}}</td>
+    </ng-container>
+  </tr>
+</table>
+
+<div *ngIf="showUserAction" class="userActions">
+
+  <button mat-button class="button md-accent md-raised" (click)="modifyUserRequest()"
+    style="margin-left: 15px; width:160px;">EDIT
+  </button>
+  <button mat-button class="button md-accent md-raised" (click)="openDialog()"
+    style="left: 38px;width:160px;">DELETE
+  </button>
+</div> 
+
+<div class="PaginatrionDiv">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

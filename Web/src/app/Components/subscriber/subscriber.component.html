@@ -1,0 +1,46 @@
+<div>
+   <div class=" ProcessList" style="margin: 55px;">
+
+      <table class="mat-elevation-z8 tableAlign mat-table center">
+         <thead style="background: darkseagreen;">
+            <th>Action</th>
+            <th>Process Name</th>
+            <th>State</th>
+            <th>Status</th>
+         </thead>
+         <tr
+            *ngFor="let integrationProcess of integrationProcesses | orderBy: integrationProcessID |   paginate: { itemsPerPage: 7, currentPage: p }">
+            <td>
+               <input type="radio" name="Action"
+                  (click)="loadProcessForExecution(integrationProcess);select(integrationProcess);" />
+            </td>
+            <td style="text-align: left;">
+               {{ integrationProcess.integrationProcessName }}
+            </td>
+            <td>
+               <ng-container>{{integrationProcess.state}}</ng-container>
+            </td>
+            <td>
+               <p *ngIf="integrationProcess.enabled">Enabled</p>
+               <p *ngIf="!integrationProcess.enabled">Disabled</p>
+            </td>
+         </tr>
+      </table>
+      <div *ngIf="!isProcessAvailable" class="noRecord center">
+         <p>No records to display</p>
+      </div>
+      <div id="parentActions">
+         <div *ngIf="showprocessDiv" class="processActions">
+            <button mat-button class="button md-accent md-raised" (click)="getUiSref(); ">PROCESS DETAILS
+            </button>
+            <button *ngIf="!IsProcesssing" mat-button class="button md-accent md-raised" style="margin-left: 33px;">EXECUTE
+            </button>
+            <button *ngIf="IsProcesssing" mat-button class="button md-accent md-raised" style="margin-left: 33px;" disabled>Processing
+            </button>
+         </div>
+      </div>
+      <div class="paginationDiv" id="parentActions">
+         <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+   </div>
+</div>

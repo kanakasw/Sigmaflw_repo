@@ -1,0 +1,7 @@
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(1,'SINGLE','IntegrationProcessExecutionID','VARIABLE','IntegrationProcessExecution.integrationProcessExecutionID');
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(2,'SINGLE','BaseFolderPath','CONSTANT','E:\\Data Integration Service\\dataintegrationservice\\integration-files');
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(3,'SINGLE','SourceFilePath','VARIABLE','ExecuteIntegrationProcessVO.sourcefilePath');
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(4,'SINGLE','InputData','VARIABLE','ExecuteIntegrationProcessVO.inputData');
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(5,'SINGLE','ActivityExecutionID','VARIABLE','ActivityExecution.activityExecutionID');
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(6,'SINGLE','SubscriberID','VARIABLE','Subscriber.subscriberID');
+INSERT INTO ApplicationVariable(ApplicationVariableID, DataType, Keyword, Type,  Value) VALUES(7,'SINGLE','IntegrationProcessID','VARIABLE','IntegrationProcess.integrationProcessID');

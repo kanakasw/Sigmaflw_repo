@@ -1,0 +1,118 @@
+
+
+.mat-nav-list .mat-list-item {
+    cursor: pointer;
+    /* padding-top: 1px; */
+    margin-top: 5px !important;
+    outline: 0;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    font-size: 14px;
+    background: ghostwhite;
+    height: 38px;
+ 
+}
+.material-icons {
+    font-size: 15px !important;
+    color: red; 
+}
+
+/* .mat-button{
+    background-color: #97d077 !important;
+    height: 25px;
+    border-radius: 4px;
+    width: 100px;
+    margin-top: 0px;
+    color: white !important;
+    line-height: 27px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+} */
+.processnav{
+   color: dimgrey;
+    font-weight: 600 !important;
+}
+
+.ProcessList{
+    width: 90%;
+   /*  border-style: groove;
+    border-width: thin; */
+    padding-bottom: 30px;
+}
+.hr{
+    margin-top: 7px!important ;
+    margin-bottom: 10px !important;
+}
+.processDivHeader{ 
+    background: lightblue;
+    padding-top: 1px;
+    /* padding-left: 0px; */
+    margin-left: -15px;
+    padding-bottom: 5px;
+    margin-right: -15px;
+}
+
+.processHeaderContent{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+.tableAlign{
+    width: 90%;
+  /*   margin-top: 63px;
+    margin-left: -78px; */
+    margin-bottom: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+table.center{
+    margin-left:   auto;
+    margin-right: auto;
+}
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    height: 46px;
+  }
+
+
+  a {
+   text-decoration: none !important; 
+   cursor: pointer;
+  }
+
+
+  .processexecutionInput{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 501px;
+    padding-left: 40px;
+    margin-left: 165px;
+  }
+.paginationDiv{
+    margin-top: 23px;
+}
+
+#parentActions{
+    text-align:center;
+}
+.noRecord{
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: #f4f4f4;
+    margin-top: -20px;
+    width: inherit;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}

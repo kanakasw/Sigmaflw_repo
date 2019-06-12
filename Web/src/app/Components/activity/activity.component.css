@@ -1,0 +1,17 @@
+
+.processBtn{
+    margin-left: 210px;
+    margin-top: 11px;
+}
+.triggerDropdown{
+    margin-left: 0px !important;
+}
+div.tab-pane.ng-star-inserted.active {
+    border: 1px solid;
+}
+
+label.specs{
+    margin-bottom: 0px !important;
+    font-weight: 500 !important;
+    padding-left: 41px !important;
+}

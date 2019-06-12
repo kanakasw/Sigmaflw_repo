@@ -1,0 +1,19 @@
+.dialog{
+    width:40%;
+    border-style: outset;
+    height: auto;
+    position: fixed;
+    z-index: 99999;
+    /* top: 5px;
+    left: 20px; */
+    text-align: center;
+    bottom: 210px;
+    right: 390px;
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: ghostwhite !important;
+}

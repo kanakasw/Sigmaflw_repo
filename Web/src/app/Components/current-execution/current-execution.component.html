@@ -1,0 +1,86 @@
+<div id="current-execution-container" class="executions-summary-containers" (click)="containerClick">
+    <label class="current-execution-message">{{message}}</label>
+
+
+    <!-- current-execution-details -->
+    <div id="current-execution-details-container">
+
+        <div class="activity-summary-card-wrapper">
+            <table class="mat-elevation-z8 tableAlign mat-table center">
+                <thead style="background: darkseagreen;">
+                    <th>Serial Number</th>
+                    <th>Start Time</th>
+                    <th>Finish Time</th>
+                    <th>Status</th>
+                    <th
+                        *ngIf="currentIntegrationProcessesExecution && currentIntegrationProcessesExecution.status == 'ERROR'">
+                        Retry
+                    </th>
+                </thead>
+                <tr *ngIf="currentIntegrationProcessesExecution">
+                    <!--   <td>{{currentIntegrationProcessesExecution.integrationProcessID}}</td> -->
+                    <td>{{currentIntegrationProcessesExecution.integrationProcessExecutionID}}</td>
+                    <td>{{currentIntegrationProcessesExecution.executionStartTime | date: 'MMM d, y, h:mm:ss a' }}</td>
+                    <td>{{currentIntegrationProcessesExecution.executionFinishTime | date: 'MMM d, y, h:mm:ss a' }}
+                    </td>
+
+                    <td *ngIf="currentIntegrationProcessesExecution.status == 'ERROR'">Error</td>
+                    <td *ngIf="currentIntegrationProcessesExecution.status == 'COMPLETED'">Completed</td>
+                    <td *ngIf="currentIntegrationProcessesExecution.status == 'PROCESSING'">Processing</td>
+                    <td *ngIf="currentIntegrationProcessesExecution.status == 'ERROR'">
+                        <mat-icon style="color:royalblue; cursor: pointer;" (click)="retryActivityExecutionByActivityExecutionID(currentIntegrationProcessesExecution.integrationProcessExecutionID, 
+                        currentIntegrationProcessesExecution.integrationProcessID)">autorenew</mat-icon>
+                    </td>
+                </tr>
+            </table>
+            <div *ngIf="!currentIntegrationProcessesExecution" class="noRecords">
+                <p>No records to display</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="execution-statistics-div">
+        <mat-card class="average-execution-time-details" (click)="toggleAvgExe = !toggleAvgExe"
+            style="margin-top: 44px;">
+            <label class="hr-separator-td hr-separator-label-td">Average Execution Time</label>
+            <mat-icon class="hr-separator-td" style="fill:inherent" size="18">keyboard_arrow_down</mat-icon>
+        </mat-card>
+
+        <!--average-execution-time-details-container-->
+        <div id="average-execution-time-details-container" class="average-execution-time-details-container slideable"
+            *ngIf="toggleAvgExe">
+            <div>
+                <table class="mat-elevation-z8 tableAlign mat-table center">
+                    <tr *ngFor="let item of objectKeys(averageExecutionTimeDetails)" style="background: darkseagreen;">
+                        <td>{{item}}</td>
+                        <td>{{averageExecutionTimeDetails[item]}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--last-execution-details -->
+        <!--   <mat-card class="last-execution-details" (click)="toggleLastExecution = !toggleLastExecution"
+            style="margin-top: 44px;" #f4f4f4>
+            <label class="hr-separator-td hr-separator-label-td">Last Execution Details</label>
+            <mat-icon class="hr-separator-td" style="fill:inherent" size="18">keyboard_arrow_down</mat-icon>
+
+        </mat-card>
+      
+        <div id="last-execution-details-container" class="last-execution-details-container slideable"
+            *ngIf="toggleLastExecution">
+            <div *ngIf="lastExecutionDetails">
+                <table class="mat-elevation-z8 tableAlign mat-table center">
+                    <tr *ngFor="let item of objectKeys(lastExecutionDetails)">
+                        <td>{{item  | convertCaseFilter}}</td>
+                        <td *ngIf="item=='executionStartTime' || item=='executionFinishTime'">
+                            {{lastExecutionDetails[item]}}</td>
+                        <td *ngIf="!(item=='executionStartTime' || item=='executionFinishTime')">
+                            {{lastExecutionDetails[item]}}</td>
+                        <td style="border-bottom: none;"></td>
+                    </tr>
+                </table>
+            </div>
+        </div> -->
+    </div>
+</div>

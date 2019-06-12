@@ -1,0 +1,45 @@
+<div class="executionStepOutcome" style="padding-bottom: 15px;">
+    <div mat-dialog-content>
+        <!--etlStepRuntime-->
+        <div *ngIf="executionStepOutcome.etlStepRuntime">
+            <table *ngIf="executionStepOutcome.etlStepRuntime.inputParameters">
+                <caption>Runtime Parameters</caption>
+                <tr *ngFor="let item of objectKeys(executionStepOutcome.etlStepRuntime.inputParameters)">
+                    <ng-container>
+                        <td>{{item}}</td>
+                        <td>{{executionStepOutcome.etlStepRuntime.inputParameters[item]}}</td>
+                    </ng-container>
+                </tr>
+            </table>
+            <br/>
+            <div style="padding-left:22px;">
+                    <p >PDI File Path</p>
+                    <p>{{executionStepOutcome.etlStepRuntime.ktrFilePath}}</p>
+            </div>
+           
+        </div>
+
+        <!--logEntries-->
+        <div *ngIf="executionStepOutcome.logEntries" style="padding-left:22px;">
+            <p>Log Entries</p>
+            <ul *ngFor="let item of objectKeys(executionStepOutcome.logEntries)">
+                <li>{{item}} : {{executionStepOutcome.logEntries[item]}}</li>
+            </ul>
+        </div>
+
+        <!--outputParameters-->
+        <div *ngIf="executionStepOutcome.outputParameters">
+            <table>
+                <tr *ngFor="let item of objectKeys(executionStepOutcome.outputParameters)">
+                    <td>{{item}}</td>
+                    <td>{{executionStepOutcome.outputParameters[item]}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="closeDialog()" class="md-primary center">
+            OK
+        </button>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="alignComponent">
+  <div class="Processheader">
+    <h4 style="color: floralwhite;font-weight: 600;">Modify User
+    </h4>
+  </div>
+
+  <div class="col-md-6 registerFormDiv">
+    <div class="registration">
+      <form [formGroup]="updateForm" style="margin-top: 27px;
+          margin-left: 70px;">
+        <div class="form-group">
+          <label for="login" class="labels">Username</label>
+          <input type="text" formControlName="login" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.login.errors }"
+            style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+          <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+            <div *ngIf="f.login.errors.required" class="errorText" style="margin-left: 13px;">Username is required</div>
+            <!--  <div *ngIf="f.login.errors" class="errorText">username already exists
+                  </div> -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="firstName" class="labels">First Name</label>
+          <input type="text" formControlName="firstName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required" class="errorText" style="margin-left: 13px;">Firstname is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName" class="labels">Last Name</label>
+          <input type="text" formControlName="lastName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+            style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required" class="errorText" style="margin-left: 13px;">LastName is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="labels">Email</label>
+          <input type="text" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            style="margin-top: 0px;width: 320px;margin: 0 13px;" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required" class="errorText" style="margin-left: 13px;">Email is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="status" class="labels">Status</label>
+          <select formControlName="status" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.status.errors }" style="width: 320px;height: 37px;">
+            <option value="">Select the user status</option>
+            <option value="ACTIVE">Active</option>
+            <option value="INACTIVE">Inactive</option>
+          </select>
+          <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+            <div *ngIf="f.status.errors.required" class="errorText" style="margin-left: 13px;">Status is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="role" class="labels">Role</label>
+          <!-- <input type="text" formControlName="role" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.role.errors }"
+                      style="margin-top: 0px;width: 320px;margin: 0 13px;" /> -->
+          <select formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.role.errors }"
+            style="width: 320px;height: 37px;">
+            <option value="">Select the user role</option>
+            <option value="ADMIN">Admin</option>
+            <option value="APP_USER">App User</option>
+          </select>
+          <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+            <div *ngIf="f.role.errors.required" class="errorText" style="margin-left: 13px;">Role is required</div>
+          </div>
+        </div>
+
+        <div class="form-group" style="padding-left: 70px;">
+          <button mat-button type="submit" class="button md-accent md-raised" [disabled]="loading"
+            (click)="updateUser()" style="margin-left: 4px;
+                      width: 87px;
+                      height: 33px;">Update
+          </button>
+          <img *ngIf="loading" class="pl-3"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <!--  <a routerLink="/home" class="btn btn-link cancelbtn">Cancel</a> -->
+
+          <button mat-button class="button md-accent md-raised" (click)="Cancel()" style="margin-left: 12px;width: 87px;
+                      height: 33px;">Cancel</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

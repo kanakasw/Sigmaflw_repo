@@ -1,0 +1,66 @@
+<!-- <div style="background-color: #e0e0e0;"> -->
+
+<!-- Left Menu Design -->
+
+
+<!-- Container -->
+<div id="main" class="bodyStyle">
+
+  <nav class="navbar navbar-expand topNavStyle " *ngIf="currentuser">
+    <a href="#/home"><img src="../assets/images/logo.png" (click)="setActiveTab('dashboard');"
+        [ngClass]="{'activeTab': activeTab == 'dashboard'}" class="brand-logo" /></a>
+    <div class="navbar-nav" style="float:right">
+      <a class="nav-item nav-link DashboardLink" href="#/home" (click)="setActiveTab('dashboard');"
+        [ngClass]="{'activeTab' : activeTab == 'dashboard'}">Dashboard </a>
+
+      <button mat-button [matMenuTriggerFor]="menuProcess" *ngIf="currentUserRole=='ADMIN'" class="manageProcesses"
+        [ngClass]="{'activeTab' : activeTab == 'manageProcesses'}">Process Management</button>
+      <mat-menu #menuProcess="matMenu">
+        <button mat-menu-item (click)="setUrl('createProcess'); setActiveTab('manageProcesses');">Create
+          Process</button>
+        <!--    <button mat-menu-item (click)="setUrl('modifyProcess')">Modify Process</button> -->
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="menu" class="manageusers" *ngIf="currentUserRole=='ADMIN'"
+        [ngClass]="{'activeTab': activeTab == 'usermanagement'}">User
+        Management</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="setUrl('createUser'); setActiveTab('usermanagement') ">Create user</button>
+        <button mat-menu-item (click)="setUrl('userList'); setActiveTab('usermanagement') ">User List</button>
+      </mat-menu>
+      <a class="nav-item nav-link">
+        <mat-icon class="logoutIcon" (click)="logout()" matTooltip="Logout">logout</mat-icon>
+      </a>
+    </div>
+  </nav>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="currentuser">
+      <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto navstyle">
+        <li class="nav-item active">
+          <a class="nav-link" href="#/home">Dashboard</a>
+        </li>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            User Management
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" (click)="setUrl('createUser')">Create user</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="setUrl('userList')">User List</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <mat-icon class="logoutIcon" (click)="logout()">logout</mat-icon>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <!-- ui-view Render Child Views Here -->
+  <div class="OutletView">
+    <router-outlet></router-outlet>
+  </div>
+</div>
