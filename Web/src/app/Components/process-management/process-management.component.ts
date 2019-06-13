@@ -8,6 +8,7 @@ import { UserServiceService } from 'src/app/Services/user-service.service';
 import { processState } from 'src/app/Models/processStates';
 import { filePath } from 'src/app/Models/ProcessFilePaths';
 import { process } from 'src/app/Models/Process';
+import { NotificationService } from 'src/app/Services/common/notification.service';
 @Component({
   selector: 'app-process-management',
   templateUrl: './process-management.component.html',
@@ -59,7 +60,8 @@ export class ProcessManagementComponent implements OnInit {
     private route: ActivatedRoute,
     private formbuilder: FormBuilder,
     private processService: ProcessService,
-    private userService: UserServiceService) {
+    private userService: UserServiceService,
+    private notificationService : NotificationService) {
 
     this.route.params.subscribe(params => {
       this.showdiv = params['input']
@@ -190,6 +192,7 @@ export class ProcessManagementComponent implements OnInit {
   }
 
   Cancel() {
+  this.notificationService.setActiveTab('dashboard');
     this.router.navigate(['home'])
   }
 

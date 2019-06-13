@@ -101,7 +101,6 @@ export class CurrentExecutionComponent implements OnInit {
       .getCurrentIntegrationProcessExecutionByIntegrationProcessID(ENDPOINTS, currentProcessID)
       .subscribe(Response => {
         var responseData = Response;
-        console.log(responseData)
         this.currentIntegrationProcessesExecution = responseData;
         this.message = "";
       }, error => {

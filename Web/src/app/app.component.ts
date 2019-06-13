@@ -26,12 +26,15 @@ export class AppComponent {
     private router: Router,
     private toastr: NotificationService,
     private loginService: LoginService,
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private notificationSerivce: NotificationService
   ) {
     this.processHeader = this.applicationStorage.processHeader;
   }
   ngOnInit() {
-    this.activeTab = sessionStorage.getItem('activeTab') == null ? 'dashboard' : sessionStorage.getItem('activeTab');
+    this.notificationSerivce.activeTab.subscribe(x => {
+      this.activeTab = x == null ? 'dashboard' : x;
+    })
     this.loginService.currentuser.subscribe(x => {
       this.currentuser = x;
     })
@@ -41,11 +44,11 @@ export class AppComponent {
   }
 
   logout() {
-    this.activeTab = 'dashboard';
     var accessToken = this.applicationStorage.getAccessToken();
     this.toastr.showSuccess("Successfully Logged out...");
     this.loginService.currentUserSubject.next(null);
     this.userService.currentUserRoleSubject.next(null);
+    this.notificationSerivce.currentactiveTabSubject.next(null);
     this.applicationStorage.clear();
     this.subscriberSerice.logout(ENDPOINTS, accessToken)
       .subscribe(Response => {

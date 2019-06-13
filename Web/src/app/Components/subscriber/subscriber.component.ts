@@ -4,8 +4,6 @@ import { SubscriberService } from 'src/app/Services/subscriber.service';
 import { ResponseHandlerService } from 'src/app/Services/common/response-handler.service';
 import { ENDPOINTS } from 'src/app/index.constants';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { LoginService } from 'src/app/Services/login.service';
 import { NotificationService } from 'src/app/Services/common/notification.service';
 import { UserServiceService } from 'src/app/Services/user-service.service';
 import { first } from 'rxjs/operators';
@@ -44,82 +42,39 @@ export class SubscriberComponent implements OnInit {
     private responseHandler: ResponseHandlerService,
     private router: Router,
     private toastr: NotificationService,
-    private loginService: LoginService,
     private userService: UserServiceService,
     private executionbService: ExecutionService) { }
 
   ngOnInit() {
     this.getSubscriberDetails();
   }
-  openNav() {
-
-    if (this.flag == false) {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-      if (this.flag1 == true) {
-        this.flag = true;
-      }
-      this.flag1 = true;
-    }
-
-    if (this.flag == true) {
-      this.flag = false;
-      this.flag1 = false;
-      document.getElementById("mySidenav").style.width = "300px";
-      document.getElementById("main").style.marginLeft = "300px";
-    }
-  }
+  /*  openNav() {
+ 
+     if (this.flag == false) {
+       document.getElementById("mySidenav").style.width = "0";
+       document.getElementById("main").style.marginLeft = "0";
+       if (this.flag1 == true) {
+         this.flag = true;
+       }
+       this.flag1 = true;
+     }
+ 
+     if (this.flag == true) {
+       this.flag = false;
+       this.flag1 = false;
+       document.getElementById("mySidenav").style.width = "300px";
+       document.getElementById("main").style.marginLeft = "300px";
+     }
+   } */
 
   getSubscriberDetails() {
     var username = sessionStorage.getItem('username')
     this.userService.getLoggedInUserDetails(username)
       .pipe(first())
       .subscribe(Response => {
-        var ScheduleState;
         this.NavigationMenu = JSON.parse(localStorage.getItem('navigationMenu'));
         this.integrationProcesses = this.NavigationMenu.integrationProcesses;
-
-        this.integrationProcesses.forEach(process => {
-
-          process.activities.forEach(activity => {
-            if (activity.activityType == "INTEGRATION") {
-              if (activity.triggerType == "SCHEDULED") {
-                var cron = JSON.parse(activity.scheduleSetup)
-                if (cron.cronExpression == "0 0 0 0 0/0 ? *")
-                  ScheduleState = "Schedule_undefined"
-                else
-                  ScheduleState = processState.Scheduled
-              }
-              else
-                if (activity.triggerType == "MANUAL")
-                  ScheduleState = processState.Manual
-            }
-          });
-          if (ScheduleState == processState.Scheduled)
-            process.state = "Scheduled";
-          else
-            if (ScheduleState == processState.Manual)
-              process.state = "Ready to Execute";
-            else
-              if (ScheduleState == "Schedule_undefined")
-                process.state = "Schedule Not Defined";
-              else
-                process.state = "Not Available"
-
-          this.executionbService.getCurrentIntegrationProcessExecutionByIntegrationProcessID(ENDPOINTS, process.integrationProcessID)
-            .subscribe(Response => {
-              if (Response != null) {
-                var currentState = Response.status
-                if (currentState == "PROCESSING")
-                  process.state = "Processing"
-                else
-                  if (ScheduleState == processState.Scheduled && currentState != "PROCESSING")
-                    process.state = "Scheduled";
-              }
-            })
-          ScheduleState = "";
-        });
-        
+        this.setProcessStates(this.integrationProcesses);
         this.isProcessAvailable = (this.integrationProcesses.length == 0) ? false : true;
         this.applicationStorage.navigationMenu = this.NavigationMenu;
       },
@@ -131,7 +86,6 @@ export class SubscriberComponent implements OnInit {
   processDetailsExecution() {
     this.disableExecuteProcessButton = true;
     var integrationProcessID = document.querySelector('#value_integrationProcessID')[0].innerText;
-
     this.subscriberSerice.executeProcessByIntegrationProcessID(integrationProcessID)
       .subscribe(Response => {
         this.disableExecuteProcessButton = false;
@@ -208,7 +162,6 @@ export class SubscriberComponent implements OnInit {
 
   //helper method for preparing routing state data
   prepareStates(stateName, urlName, templateurl, controllername, parentState) {
-
     var StateDefinition = {
       state: stateName,
       url: urlName,
@@ -246,5 +199,49 @@ export class SubscriberComponent implements OnInit {
 
     this.showprocessDiv = true;
     this.processForExecution = process.integrationProcessName;
+  }
+
+  setProcessStates(integrationProcesses) {
+    var ScheduleState;
+    integrationProcesses.forEach(process => {
+
+      process.activities.forEach(activity => {
+        if (activity.activityType == "INTEGRATION") {
+          if (activity.triggerType == "SCHEDULED") {
+            var cron = JSON.parse(activity.scheduleSetup)
+            if (cron.cronExpression == "0 0 0 0 0/0 ? *")
+              ScheduleState = "Schedule_undefined"
+            else
+              ScheduleState = processState.Scheduled
+          }
+          else
+            if (activity.triggerType == "MANUAL")
+              ScheduleState = processState.Manual
+        }
+      });
+      if (ScheduleState == processState.Scheduled)
+        process.state = "Scheduled";
+      else
+        if (ScheduleState == processState.Manual)
+          process.state = "Ready to Execute";
+        else
+          if (ScheduleState == "Schedule_undefined")
+            process.state = "Schedule Not Defined";
+          else
+            process.state = "Not Available"
+
+      this.executionbService.getCurrentIntegrationProcessExecutionByIntegrationProcessID(ENDPOINTS, process.integrationProcessID)
+        .subscribe(Response => {
+          if (Response != null) {
+            var currentState = Response.status
+            if (currentState == "PROCESSING")
+              process.state = "Processing"
+            else
+              if (ScheduleState == processState.Scheduled && currentState != "PROCESSING")
+                process.state = "Scheduled";
+          }
+        })
+      ScheduleState = "";
+    });
   }
 }

@@ -110,5 +110,4 @@ export class ExecutionService {
                         replaceTagWithValue(url, 'integrationProcessID', integrationProcessID);
                 return this.http.get<any>(url);
         }
-
 }
