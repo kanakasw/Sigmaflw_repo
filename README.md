@@ -13,7 +13,7 @@ It uses Pentaho Data Integration (PDI) tool for data transformation.
 
 ### Prerequisites
  - Pentaho Data Integration Tool need to be installed on local machine.  
-  To know more about Pentaho Data Integration goto [Pentaho Data Integration]        (https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration).    
+  To know more about Pentaho Data Integration goto [Pentaho Data Integration](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration).    
  After installation complete, update application property to
 
   ```bash
