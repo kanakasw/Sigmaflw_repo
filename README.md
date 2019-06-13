@@ -9,7 +9,7 @@ It uses Pentaho Data Integration (PDI) tool for data transformation.
 
 ### Built With
  This application is generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.    
- It uses Java development enviroment and Pentaho API at server side.
+ It uses SpringBoot, Spring REST, Spring Data JPA, Maven and Pentaho API to build Data Integration Service.  
 
 ### Prerequisites
  - Pentaho Data Integration Tool need to be installed on local machine.  
@@ -30,8 +30,8 @@ It uses Pentaho Data Integration (PDI) tool for data transformation.
      
 - KTR Structure
   - Ktr file name has to be the process name.
-  - The format for input file to the KTR is ProcessName_input.{extension}.  
-  - Output of the KTR will be ProcessName_output.{extension}.
+  - The format for input file to the KTR is {ProcessName}_input.{extension}.  
+  - Output of the KTR will be {ProcessName}_output.{extension}.
 
 
 ### Setting up
@@ -40,11 +40,35 @@ Here's a brief introduction  about what a user must do in order to start using t
 
 ```bash
 git clone https://github.com/your/your-project.git
-cd your-project/
-npm install -g --save
-Run ng serve  for dev server
+cd your-project/Web
+npm install  
+Run ng serve  
 Navigate to http://localhost:4200/. 
 ``` 
+
+
+Steps to Configure Data Integration Service   
+
+```bash
+Install java
+Install maven
+Checkout project
+cd Service/dataintegrationservice
+Execute command mvn clean install
+
+```
+There are multiple ways to start service  
+
+-  Execute command in the location of dataintegrationservice-1.0.0.jar.    
+   java -jar -Dspring.profiles.active=dev dataintegrationservice-1.0.0.jar.    
+   Possible values for profiles.active = dev, test, production  
+
+-  Import project in eclipse and right click on DataIntegrationApplication.java, Run as Java Application.
+
+Default server port is 8080.  
+User can change embeded tomcat server port by configuring "server.port" property in application-{profile}.properties file.  
+
+
 
 ## Usage
 
