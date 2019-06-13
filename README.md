@@ -55,7 +55,7 @@ Process Integration supports two use cases
 ### Screens
   Sample ktr file for database to database tranformation.  
     
-![ScreenShot](Web\src\assets\Screens\sampleKtr.png "Sample ktr")
+![ScreenShot](Web/src/assets/Screens/sampleKtr.png "Sample ktr")
 
 ## Contributing
 
