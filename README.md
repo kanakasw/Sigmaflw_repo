@@ -13,16 +13,21 @@ It uses Pentaho Data Integration (PDI) tool for data transformation.
 
 ### Prerequisites
 - Node.js need to be installed on local machine to run npm commands required for the configuration of the application.  
-   install [node.js](https://nodejs.org/en/) here.
- - Pentaho Data Integration Tool need to be installed on local machine.  
-  To know more about Pentaho Data Integration goto [Pentaho Data Integration](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration).    
- After installation complete, update application property to
+   install [node.js](https://nodejs.org/en/) here.  
+- Angular/cli needs to be installed to run application.
+```bash
+npm install -g @angular/cli
+```
 
-  ```bash
-    pentaho.plugin = [provide path pentaho/plugins]
- 
- ```
+- Java (version 8) and [maven](http://maven.apache.org/download.cgi) has to be installed on local machine.  
+- Postgres need to be installed on local machine on port 5432.
+- Pentaho Data Integration Tool need to be installed on local machine.To know more about Pentaho Data Integration goto [Pentaho Data Integration](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration).  
+ After installation complete, Update application property to
 
+```bash
+  pentaho.plugin = [provide path pentaho/plugins]
+```
+  
 - Kettle Transformation(KTR) Management([ what is ktr? ]()):
    - ktr files are generated as output of PDI Tranformations which provides data mining and extract, transform, load (ETL) capabilities. 
    - Despite the ktr and kjb extensions, PDI transformations and jobs are just XML files.
@@ -47,23 +52,22 @@ Navigate to http://localhost:4200/.
 ``` 
 
 
-Steps to Configure Data Integration Service   
+Steps to Configure Data Integration Service.  
+
+- Create database 'DataIntegrationServiceDev' for dev active profile with 'dataintegration' as username and 'root' as a password.
 
 ```bash
-Install java
-Install maven
-Checkout project
 cd Service/dataintegrationservice
 Execute command mvn clean install
 
 ```
-There are multiple ways to start service  
+- There are multiple ways to start service  
 
--  Execute command in the location of dataintegrationservice-1.0.0.jar.    
-   java -jar -Dspring.profiles.active=dev dataintegrationservice-1.0.0.jar.    
-   Possible values for profiles.active = dev, test, production  
+  -  Execute command in the location of dataintegrationservice-1.0.0.jar.    
+     java -jar -Dspring.profiles.active=dev dataintegrationservice-1.0.0.jar.    
+     Possible values for profiles.active = dev, test, production  
 
--  Import project in eclipse and right click on DataIntegrationApplication.java, Run as Java Application.
+  -  Import project in eclipse and right click on DataIntegrationApplication.java, Run as Java Application.
 
 Default server port is 8080.  
 User can change embeded tomcat server port by configuring "server.port" property in application-{profile}.properties file.  
