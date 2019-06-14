@@ -26,6 +26,7 @@ import com.data.integration.service.ActivityService;
 import com.data.integration.service.FileUploadService;
 import com.data.integration.service.IntegrationProcessService;
 import com.data.integration.service.exceptions.ActivityConfigurationException;
+import com.data.integration.service.exceptions.IntegrationProcessException;
 import com.data.integration.service.exceptions.IntegrationProcessNotFoundException;
 import com.data.integration.service.exceptions.SubscriberNotFoundException;
 import com.data.integration.service.vo.BatchProcessVO;
@@ -55,7 +56,7 @@ public class IntegrationProcessController {
 
 	@Autowired
 	private ActivityService activityService;
-	
+
 	@ApiOperation(value = "Get all processes details using user name")
 	@RequestMapping(method = RequestMethod.GET, path = "/Integration/process/subscriber/username/{userName}", produces = "application/json")
 	@ApiResponses(value = {
@@ -163,19 +164,66 @@ public class IntegrationProcessController {
 			@PathVariable("IntegrationProcessID") Long integrationProcessID,
 			@RequestBody IntegrationProcess integrationProcessSetup)
 			throws IntegrationProcessNotFoundException {
-		
+
 		IntegrationProcessResultVO integrationProcessResultVO = new IntegrationProcessResultVO();
-		
+
 		integrationProcessService.updateIntegrationProcessSetup(
 				integrationProcessID, integrationProcessSetup);
-		
-		//update in process may change in its activity scheduling configuration 
-		//i.e. process enabled/disabled by user will schedule/unschedule process activities
+
+		// update in process may change in its activity scheduling configuration
+		// i.e. process enabled/disabled by user will schedule/unschedule
+		// process activities
 		activityService.updateActivitySchedulingConfig(integrationProcessSetup);
-				
+
 		integrationProcessResultVO.setStatus(200);
 		integrationProcessResultVO
 				.setMessage("Updated integration process setup details successfully");
 		return integrationProcessResultVO;
+	}
+
+	@ApiOperation(value = "Create Integration Process Setup")
+	@RequestMapping(method = RequestMethod.POST, path = "/Integration/subscriber/process/create", produces = "application/json")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Success", response = String.class),
+			@ApiResponse(code = 401, message = "Unauthorized"),
+			@ApiResponse(code = 403, message = "Forbidden"),
+			@ApiResponse(code = 404, message = "Not Found"),
+			@ApiResponse(code = 500, message = "Failure") })
+	@ResponseBody
+	public IntegrationProcessResultVO createIntegrationProcessSetup(
+			@RequestBody IntegrationProcess integrationProcessSetup)
+			throws IntegrationProcessException {
+
+		IntegrationProcessResultVO integrationProcessResultVO = new IntegrationProcessResultVO();
+
+		integrationProcessService
+				.createIntegrationProcessSetup(integrationProcessSetup);
+
+		// update in process may change in its activity scheduling configuration
+		// i.e. process enabled/disabled by user will schedule/unschedule
+		// process activities
+		// activityService.updateActivitySchedulingConfig(integrationProcessSetupResult);
+
+		integrationProcessResultVO.setStatus(200);
+		integrationProcessResultVO
+				.setMessage("Created integration process setup details successfully");
+		return integrationProcessResultVO;
+	}
+
+	@ApiOperation(value = "Make Integration Process Disabled")
+	@RequestMapping(method = RequestMethod.PUT, path = "/Integration/subscriber/process/{id}/disable")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Success", response = String.class),
+			@ApiResponse(code = 401, message = "Unauthorized"),
+			@ApiResponse(code = 403, message = "Forbidden"),
+			@ApiResponse(code = 404, message = "Not Found"),
+			@ApiResponse(code = 500, message = "Failure") })
+	@ResponseBody
+	public Boolean makeIntegrationProcessDisabledById(
+			@PathVariable("id") Long integrationProcessID)
+			throws IntegrationProcessException,
+			IntegrationProcessNotFoundException {
+		return integrationProcessService
+				.makeIntegrationProcessDisabledById(integrationProcessID);
 	}
 }

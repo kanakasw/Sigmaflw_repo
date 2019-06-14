@@ -365,7 +365,13 @@ public class ActivityServiceImpl implements ActivityService {
 	@Override
 	public List<String> getUniqueKeywords(Long subscriberID)
 			throws IllegalArgumentException, IllegalAccessException {
-		List<String> keywords = applicationVariableRepository.getKeywordsBySubscriberID(subscriberID);
+		List<String> keywords = null;
+		if (subscriberID != null) {
+			keywords = applicationVariableRepository
+					.getKeywordsBySubscriberID(subscriberID);
+		} else {
+			keywords = applicationVariableRepository.getAllKeywords();
+		}
     	for(int i = 0; i < keywords.size(); i++){
 			String value = keywords.get(i);
 			value = "${"+value+"}";

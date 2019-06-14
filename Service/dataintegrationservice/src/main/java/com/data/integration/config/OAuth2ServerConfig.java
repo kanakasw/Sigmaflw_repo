@@ -17,8 +17,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 
-import com.data.integration.service.impl.ClientUserDetailsService;
 import com.data.integration.service.impl.CustomClientDetailsService;
+import com.data.integration.service.impl.UsersDetailsService;
 
 @Configuration
 public class OAuth2ServerConfig {
@@ -70,14 +70,14 @@ public class OAuth2ServerConfig {
         private CustomClientDetailsService customClientDetailsService;
 
         @Autowired
-        private ClientUserDetailsService clientUserDetailsService;
+        private UsersDetailsService userDetailsService;
 
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints)
                 throws Exception {
             endpoints.authenticationManager(authenticationManager);
             endpoints.tokenStore(tokenStore);
-            endpoints.userDetailsService(clientUserDetailsService);
+            endpoints.userDetailsService(userDetailsService);
 
         }
 

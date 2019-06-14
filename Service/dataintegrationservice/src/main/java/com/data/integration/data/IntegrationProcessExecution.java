@@ -28,7 +28,7 @@ public class IntegrationProcessExecution {
 	@Column(name = "IntegrationProcessExecutionID", unique = true, nullable = false)
 	private Long integrationProcessExecutionID;
 
-	@Column(name = "IntegrationProcessID", nullable = false)
+	@Column(name = "IntegrationProcessID")
 	private Long integrationProcessID;
 
 	@Column(name = "ExecutionStartTime")

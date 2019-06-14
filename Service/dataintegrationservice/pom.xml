@@ -36,7 +36,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<pentaho.kettle.version>6.1.0.0-192</pentaho.kettle.version>
+		<pentaho.kettle.version>6.1.0.19-384</pentaho.kettle.version>
+		<pentaho.kettle.version-min>6.1.0.0-192</pentaho.kettle.version-min>
 		<vertx.version>3.3.0</vertx.version>
 		<commons.lang.version>3.4</commons.lang.version>
 		<jtds.version>1.3.1</jtds.version>
@@ -124,16 +125,29 @@
 			<artifactId>kettle-ui-swt</artifactId>
 			<version>${pentaho.kettle.version}</version>
 		</dependency>
+
+		<dependency>
+		   <groupId>pentaho-kettle</groupId>
+		   <artifactId>kettle-sdk-database-plugin</artifactId>
+		   <version>7.0.0.6-95</version>
+		</dependency>
+
 		<dependency>
 			<groupId>pentaho-library</groupId>
 			<artifactId>libformula</artifactId>
-			<version>${pentaho.kettle.version}</version>
+			<version>${pentaho.kettle.version-min}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>pentaho-library</groupId>
 			<artifactId>libbase</artifactId>
-			<version>${pentaho.kettle.version}</version>
+			<version>${pentaho.kettle.version-min}</version>
+		</dependency>
+
+		<dependency>
+		   <groupId>pentaho-kettle</groupId>
+		   <artifactId>kettle-json-plugin</artifactId>
+		   <version>${pentaho.kettle.version}</version>
 		</dependency>
 
 		<!-- Jar required for Pentaho Transformation/job -->
@@ -353,6 +367,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.46</version>
 		</dependency>
 
 		<!-- for NoSuchMethod Error while executing jar -->
@@ -360,7 +375,7 @@
 			OR at least remove the <version> tag from the dependencies so that Spring 
 			Boot can manage the version. -->
 
-<!-- 		<dependency>
+		<!-- <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.7.4</version>
@@ -384,8 +399,8 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.7.4</version>
-		</dependency>
- -->
+		</dependency> -->
+
 	</dependencies>
 	<build>
 		<plugins>

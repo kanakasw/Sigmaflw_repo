@@ -23,7 +23,7 @@ public class Activity {
 	@Column(name = "ActivityID", unique = true, nullable = false)
 	private Long activityID;
 
-	@Column(name = "IntegrationProcessID", nullable = false)
+	@Column(name = "IntegrationProcessID")
 	private Long integrationProcessID;
 
 	@Column(name = "EventGroupName")

@@ -19,12 +19,15 @@ import javax.persistence.Table;
 @Table(name = "IntegrationProcess")
 public class IntegrationProcess {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IntegrationProcessID", unique = true, nullable = false)
-	private long integrationProcessID;
+	private Long integrationProcessID;
 
 	@Column(name = "SubscriberID", nullable = false)
 	private long subscriberID;
+
+	@Column(name = "UserId")
+	private long userId;
 
 	@Column(name = "IntegrationProcessUniqueReference", nullable = false)
 	private String integrationProcessUniqueReference;
@@ -40,25 +43,24 @@ public class IntegrationProcess {
 
 	@Column(name = "CreatedDate")
 	private Date createdDate;
-	
+
 	@Column(name = "ModifiedDate")
 	private Date modifiedDate;
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	@JoinColumn(name = "IntegrationProcessID", referencedColumnName = "IntegrationProcessID", nullable = true)
 	private Set<Activity> activities = new HashSet<Activity>();
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	@JoinColumn(name = "IntegrationProcessID", referencedColumnName = "IntegrationProcessID", nullable = true)
 	private Set<IntegrationProcessExecution> integrationProcessExecutions = new HashSet<IntegrationProcessExecution>();
-	
-	
+
 	public IntegrationProcess() {
-		//no-arg constructor as Required by JPA Entity specification
+		// no-arg constructor as Required by JPA Entity specification
 	}
 
-	public IntegrationProcess(long integrationProcessID, long subscriberID,
-			String integrationProcessUniqueReference,
+	public IntegrationProcess(Long integrationProcessID, long subscriberID,
+			long userID, String integrationProcessUniqueReference,
 			String integrationProcessName, String fileEncryptionKey,
 			Boolean enabled, Date createdDate, Date modifiedDate,
 			Set<Activity> activities,
@@ -66,6 +68,7 @@ public class IntegrationProcess {
 		super();
 		this.integrationProcessID = integrationProcessID;
 		this.subscriberID = subscriberID;
+		this.userId = userID;
 		this.integrationProcessUniqueReference = integrationProcessUniqueReference;
 		this.integrationProcessName = integrationProcessName;
 		this.fileEncryptionKey = fileEncryptionKey;
@@ -76,11 +79,11 @@ public class IntegrationProcess {
 		this.integrationProcessExecutions = integrationProcessExecutions;
 	}
 
-	public long getIntegrationProcessID() {
+	public Long getIntegrationProcessID() {
 		return integrationProcessID;
 	}
 
-	public void setIntegrationProcessID(long integrationProcessID) {
+	public void setIntegrationProcessID(Long integrationProcessID) {
 		this.integrationProcessID = integrationProcessID;
 	}
 
@@ -90,6 +93,14 @@ public class IntegrationProcess {
 
 	public void setSubscriberID(long subscriberID) {
 		this.subscriberID = subscriberID;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userID) {
+		this.userId = userID;
 	}
 
 	public String getIntegrationProcessUniqueReference() {
@@ -162,6 +173,7 @@ public class IntegrationProcess {
 	public String toString() {
 		return "IntegrationProcess [integrationProcessID="
 				+ integrationProcessID + ", subscriberID=" + subscriberID
+				+ ", userId=" + userId
 				+ ", integrationProcessUniqueReference="
 				+ integrationProcessUniqueReference
 				+ ", integrationProcessName=" + integrationProcessName
@@ -171,8 +183,5 @@ public class IntegrationProcess {
 				+ ", integrationProcessExecutions="
 				+ integrationProcessExecutions + "]";
 	}
-	
-	
 
-	
 }

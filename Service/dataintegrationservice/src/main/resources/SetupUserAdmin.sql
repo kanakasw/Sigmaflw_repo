@@ -1,0 +1,1 @@
+INSERT INTO public."user"(CreatedDate, Email, UserName, Password, FirstName, LastName, ModifiedDate, Role, Status) VALUES (NULL, 'admin.admin@dataintegration.com','admin', '12345', 'Admin', 'Admin', NULL, 'ADMIN', 'ACTIVE');

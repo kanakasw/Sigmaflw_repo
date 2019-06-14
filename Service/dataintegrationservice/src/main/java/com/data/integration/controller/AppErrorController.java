@@ -1,6 +1,9 @@
 package com.data.integration.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,8 +27,13 @@ import com.data.integration.service.exceptions.ActivitySchedulerException;
 import com.data.integration.service.exceptions.IntegrationProcessExecutionNotFoundException;
 import com.data.integration.service.exceptions.IntegrationProcessNotFoundException;
 import com.data.integration.service.exceptions.SubscriberNotFoundException;
+import com.data.integration.service.exceptions.UsernameAlreadyExistException;
 import com.data.integration.service.vo.IntegrationProcessResultVO;
 
+/**
+ * @author KALYANI
+ *
+ */
 @ControllerAdvice
 public class AppErrorController extends ResponseEntityExceptionHandler {
 
@@ -40,6 +48,17 @@ public class AppErrorController extends ResponseEntityExceptionHandler {
 		IntegrationProcessResultVO integrationProcessResultVO = new IntegrationProcessResultVO();
 		integrationProcessResultVO.setMessage(ex.getMessage());
 		integrationProcessResultVO.setStatus(HttpStatus.BAD_REQUEST.value());
+		return ResponseEntity.badRequest().body(integrationProcessResultVO);
+	}
+
+	@ExceptionHandler(UsernameAlreadyExistException.class)
+	@ResponseBody
+	public final ResponseEntity<IntegrationProcessResultVO> handleUsernameAlreadyExistException(
+			final HttpServletResponse httpServletResponse, Throwable ex) throws IOException {
+		LOGGER.error("Error occured ", ex);
+		IntegrationProcessResultVO integrationProcessResultVO = new IntegrationProcessResultVO();
+		integrationProcessResultVO.setMessage(ex.getMessage());
+		integrationProcessResultVO.setStatus(HttpStatus.CONFLICT.value());
 		return ResponseEntity.badRequest().body(integrationProcessResultVO);
 	}
 

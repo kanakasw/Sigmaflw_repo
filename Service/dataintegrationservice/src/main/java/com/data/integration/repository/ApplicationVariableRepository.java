@@ -33,4 +33,12 @@ public interface ApplicationVariableRepository  extends CrudRepository<Applicati
 	 */
 	@Query("SELECT DISTINCT av.keyword FROM ApplicationVariable av WHERE av.subscriberID=null OR av.subscriberID =:subscriberID")
 	public List<String> getKeywordsBySubscriberID(@Param("subscriberID")Long subscriberID);
+
+	/**
+	 * get all distinct keywords
+	 *
+	 * @return
+	 */
+	@Query("SELECT DISTINCT av.keyword FROM ApplicationVariable av")
+	public List<String> getAllKeywords();
 }

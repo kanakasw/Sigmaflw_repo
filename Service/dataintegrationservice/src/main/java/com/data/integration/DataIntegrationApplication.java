@@ -86,6 +86,22 @@ public class DataIntegrationApplication {
                     context.getNamingResources().addResource(
                             integrationResource);
                 }
+                if (environment.getRequiredProperty(
+                        "jndi.SourceDatabase.configure",
+                        Boolean.class)) {
+                    ContextResource integrationResource = new ContextResource();
+                    createServiceDBJNDISourceResource(integrationResource);
+                    context.getNamingResources().addResource(
+                            integrationResource);
+                }
+                if (environment.getRequiredProperty(
+                        "jndi.DestinationDatabase.configure",
+                        Boolean.class)) {
+                    ContextResource integrationResource = new ContextResource();
+                    createServiceDBJNDIDestinationResource(integrationResource);
+                    context.getNamingResources().addResource(
+                            integrationResource);
+                }
             }
 
             private void createServiceDBJNDIResource(
@@ -152,6 +168,138 @@ public class DataIntegrationApplication {
                                 "validationQuery",
                                 environment
                                         .getProperty("spring.dataIntegrationService.datasource.validationQuery"));
+            }
+
+            private void createServiceDBJNDISourceResource(
+                    final ContextResource integrationResource) {
+                String integrationResourceName = "jdbc/"
+                        + environment.getProperty("source.jndiname",
+                                "SourceDatabase");
+                integrationResource.setName(integrationResourceName);
+                integrationResource.setAuth("Container");
+                integrationResource.setType(DataSource.class.getName());
+                integrationResource
+                        .setProperty(
+                                "driverClassName",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.driverClassName"));
+                integrationResource
+                        .setProperty(
+                                "factory",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.factory"));
+                integrationResource
+                        .setProperty(
+                                "url",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.url"));
+                integrationResource
+                        .setProperty(
+                                "username",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.username"));
+                integrationResource
+                        .setProperty(
+                                "password",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.password"));
+                integrationResource
+                        .setProperty(
+                                "initialSize",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.initial-size"));
+                integrationResource
+                        .setProperty(
+                                "maxActive",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.max-Active"));
+
+                integrationResource.setProperty("testOnBorrow", "true");
+                integrationResource.setProperty("testWhileIdle", "true");
+                integrationResource.setProperty("jmxEnabled", "true");
+                integrationResource.setProperty("maxAge", "1700000");
+
+                integrationResource
+                        .setProperty(
+                                "maxIdle",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.max-idle"));
+                integrationResource
+                        .setProperty(
+                                "minIdle",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.min-idle"));
+                integrationResource
+                        .setProperty(
+                                "validationQuery",
+                                environment
+                                        .getProperty("spring.dataIntegrationSource.datasource.validationQuery"));
+            }
+
+            private void createServiceDBJNDIDestinationResource(
+                    final ContextResource integrationResource) {
+                String integrationResourceName = "jdbc/"
+                        + environment.getProperty("destination.jndiname",
+                                "DestinationDatabase");
+                integrationResource.setName(integrationResourceName);
+                integrationResource.setAuth("Container");
+                integrationResource.setType(DataSource.class.getName());
+                integrationResource
+                        .setProperty(
+                                "driverClassName",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.driverClassName"));
+                integrationResource
+                        .setProperty(
+                                "factory",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.factory"));
+                integrationResource
+                        .setProperty(
+                                "url",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.url"));
+                integrationResource
+                        .setProperty(
+                                "username",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.username"));
+                integrationResource
+                        .setProperty(
+                                "password",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.password"));
+                integrationResource
+                        .setProperty(
+                                "initialSize",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.initial-size"));
+                integrationResource
+                        .setProperty(
+                                "maxActive",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.max-Active"));
+
+                integrationResource.setProperty("testOnBorrow", "true");
+                integrationResource.setProperty("testWhileIdle", "true");
+                integrationResource.setProperty("jmxEnabled", "true");
+                integrationResource.setProperty("maxAge", "1700000");
+
+                integrationResource
+                        .setProperty(
+                                "maxIdle",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.max-idle"));
+                integrationResource
+                        .setProperty(
+                                "minIdle",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.min-idle"));
+                integrationResource
+                        .setProperty(
+                                "validationQuery",
+                                environment
+                                        .getProperty("spring.dataIntegrationDestination.datasource.validationQuery"));
             }
 
             private void createRuntimeDBJNDIResource(ContextResource resource) {

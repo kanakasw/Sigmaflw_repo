@@ -8,3 +8,4 @@ target/
 .classpath
 /integration-files/*/*/Exec_*
 /integration-files/*/*/Input/*
+pentaho/
