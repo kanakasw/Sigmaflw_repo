@@ -209,3 +209,490 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.ValidationException
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
 	... 72 common frames omitted
 
+2019-07-05 15:40:11.362  INFO 6204 --- [main] c.d.i.DataIntegrationApplication         : Starting DataIntegrationApplication v1.0.0 on DESKTOP-SHI8ACI with PID 6204 (D:\Process Integration\Repository\Kanaka_PDI\Service\dataintegrationservice\target\dataintegrationservice-1.0.0.jar started by admin in D:\Process Integration\Repository\Kanaka_PDI\Service\dataintegrationservice\target)
+2019-07-05 15:40:11.376  INFO 6204 --- [main] c.d.i.DataIntegrationApplication         : The following profiles are active: dev
+2019-07-05 15:40:17.409  INFO 6204 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2019-07-05 15:40:17.411  INFO 6204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.36
+2019-07-05 15:40:20.243  INFO 6204 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-05 15:40:20.457  INFO 6204 --- [localhost-startStop-1] c.d.integration.config.SimpleCORSFilter  : SimpleCORSFilter init
+2019-07-05 15:40:21.856  INFO 6204 --- [localhost-startStop-1] c.h.instance.DefaultAddressPicker        : [LOCAL] [dev] [3.7] Prefer IPv4 stack is true.
+2019-07-05 15:40:21.978  INFO 6204 --- [localhost-startStop-1] c.h.instance.DefaultAddressPicker        : [LOCAL] [dev] [3.7] Picked [172.21.32.1]:5702, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5702], bind any local is true
+2019-07-05 15:40:22.059  INFO 6204 --- [localhost-startStop-1] com.hazelcast.system                     : [172.21.32.1]:5702 [dev] [3.7] Hazelcast 3.7 (20160817 - 1302600) starting at [172.21.32.1]:5702
+2019-07-05 15:40:22.060  INFO 6204 --- [localhost-startStop-1] com.hazelcast.system                     : [172.21.32.1]:5702 [dev] [3.7] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+2019-07-05 15:40:22.062  INFO 6204 --- [localhost-startStop-1] com.hazelcast.system                     : [172.21.32.1]:5702 [dev] [3.7] Configured Hazelcast Serialization version : 1
+2019-07-05 15:40:22.598  INFO 6204 --- [localhost-startStop-1] c.h.s.i.o.impl.BackpressureRegulator     : [172.21.32.1]:5702 [dev] [3.7] Backpressure is disabled
+2019-07-05 15:40:23.760  INFO 6204 --- [localhost-startStop-1] com.hazelcast.core.LifecycleService      : [172.21.32.1]:5702 [dev] [3.7] [172.21.32.1]:5702 is STARTING
+2019-07-05 15:40:24.042  INFO 6204 --- [localhost-startStop-1] c.h.s.i.o.impl.OperationExecutorImpl     : [172.21.32.1]:5702 [dev] [3.7] Starting 1 partition threads
+2019-07-05 15:40:24.043  INFO 6204 --- [localhost-startStop-1] c.h.s.i.o.impl.OperationExecutorImpl     : [172.21.32.1]:5702 [dev] [3.7] Starting 2 generic threads (1 dedicated for priority tasks)
+2019-07-05 15:40:24.053  INFO 6204 --- [localhost-startStop-1] c.h.n.t.n.NonBlockingIOThreadingModel    : [172.21.32.1]:5702 [dev] [3.7] TcpIpConnectionManager configured with Non Blocking IO-threading model: 1 input threads and 1 output threads
+2019-07-05 15:40:24.085  WARN 6204 --- [localhost-startStop-1] com.hazelcast.instance.Node              : [172.21.32.1]:5702 [dev] [3.7] No join method is enabled! Starting standalone.
+2019-07-05 15:40:24.085  WARN 6204 --- [localhost-startStop-1] com.hazelcast.instance.Node              : [172.21.32.1]:5702 [dev] [3.7] Config seed port is 5701 and cluster size is 1. Some of the ports seem occupied!
+2019-07-05 15:40:24.146  INFO 6204 --- [localhost-startStop-1] com.hazelcast.core.LifecycleService      : [172.21.32.1]:5702 [dev] [3.7] [172.21.32.1]:5702 is STARTED
+2019-07-05 15:40:24.522  INFO 6204 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 15:40:24.722  INFO 6204 --- [localhost-startStop-1] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.11.Final}
+2019-07-05 15:40:24.729  INFO 6204 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 15:40:24.733  INFO 6204 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2019-07-05 15:40:25.318  INFO 6204 --- [localhost-startStop-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2019-07-05 15:40:25.650  INFO 6204 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2019-07-05 15:40:25.674  INFO 6204 --- [localhost-startStop-1] o.h.e.jdbc.internal.LobCreatorBuilder    : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2019-07-05 15:40:25.926  INFO 6204 --- [localhost-startStop-1] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 15:40:26.515  INFO 6204 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2019-07-05 15:40:27.567  INFO 6204 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2019-07-05 15:40:30.004  INFO 6204 --- [main] c.DataIntegrationServiceInitilizerHelper : Initilizing Kettle Enviorment
+2019-07-05 15:40:30.157  INFO 6204 --- [main] o.p.d.c.vfs.ConcurrentFileSystemManager  : Using "C:\Users\admin\AppData\Local\Temp\vfs_cache" as temporary files store.
+2019-07-05 15:40:30.210 DEBUG 6204 --- [main] o.p.d.c.vfs.ConcurrentFileSystemManager  : Skipping provider "org.apache.commons.vfs2.provider.webdav.WebdavFileProvider" because required class "org.apache.jackrabbit.webdav.client.methods.DavMethod" is not available.
+2019-07-05 15:40:30.213 DEBUG 6204 --- [main] o.p.d.c.vfs.ConcurrentFileSystemManager  : Skipping provider "org.apache.commons.vfs2.provider.hdfs.HdfsFileProvider" because required class "org.apache.hadoop.fs.FileSystem" is not available.
+2019-07-05 15:40:30.530  INFO 6204 --- [main] c.DataIntegrationServiceInitilizerHelper : DataIntegrationServiceJNDI Lookup successfull
+2019-07-05 15:40:30.535  INFO 6204 --- [main] c.DataIntegrationServiceInitilizerHelper : SourceDatabase Lookup successfull
+2019-07-05 15:40:30.536  INFO 6204 --- [main] c.DataIntegrationServiceInitilizerHelper : DestinationDatabase Lookup successfull
+2019-07-05 15:40:30.658  INFO 6204 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-07-05 15:40:30.698  INFO 6204 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-07-05 15:40:30.700  INFO 6204 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.3 created.
+2019-07-05 15:40:30.718  INFO 6204 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.3) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-07-05 15:40:30.719  INFO 6204 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-07-05 15:40:30.721  INFO 6204 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.3
+2019-07-05 15:40:30.726  INFO 6204 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@645aa696
+2019-07-05 15:40:31.126  INFO 6204 --- [main] c.d.i.s.ActivitySchedulerService         : Scheduled ActivityID =1 ,Cron Expression = 0 0 0 0 0/0 ? *
+2019-07-05 15:40:31.186 ERROR 6204 --- [main] c.d.i.s.ActivitySchedulerService         : Error occured while Scheduling activities
+
+java.lang.RuntimeException: CronExpression '0 0 0 0 0/0 ? *' is invalid.
+	at org.quartz.CronScheduleBuilder.cronSchedule(CronScheduleBuilder.java:111) ~[quartz-2.2.3.jar!/:na]
+	at com.data.integration.config.QuartzJobConfiguration.cronTrigger(QuartzJobConfiguration.java:67) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at com.data.integration.scheduler.ActivitySchedulerService.scheduleActivites(ActivitySchedulerService.java:250) ~[dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at com.data.integration.config.QuartzJobConfiguration.initialize(QuartzJobConfiguration.java:44) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+Caused by: java.text.ParseException: Day of month values must be between 1 and 31
+	at org.quartz.CronExpression.addToSet(CronExpression.java:975) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronExpression.storeExpressionVals(CronExpression.java:695) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronExpression.buildExpression(CronExpression.java:487) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronExpression.<init>(CronExpression.java:276) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronScheduleBuilder.cronSchedule(CronScheduleBuilder.java:107) ~[quartz-2.2.3.jar!/:na]
+	... 36 common frames omitted
+
+2019-07-05 15:40:31.682  INFO 6204 --- [HazlecastQueueConsumer-Thread-1] c.h.i.p.impl.PartitionStateManager       : [172.21.32.1]:5702 [dev] [3.7] Initializing cluster partition table arrangement...
+2019-07-05 15:40:35.644  INFO 6204 --- [main] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-07-05 15:40:35.656  INFO 6204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 15:40:35.711  INFO 6204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 15:40:35.728  INFO 6204 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 15:40:36.115  INFO 6204 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getIntegrationProcessesUsingGET_1
+2019-07-05 15:40:36.136  INFO 6204 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: uploadFileAndConfigureBatchExecutionUsingPOST_1
+2019-07-05 15:40:36.253  INFO 6204 --- [main] c.d.i.config.ActivitySchedulerConfig     : Scheduling activities 
+2019-07-05 15:40:36.269 ERROR 6204 --- [main] c.d.i.config.ActivitySchedulerConfig     : Error occured while Scheduling activities
+
+java.lang.IllegalArgumentException: Cron expression must consist of 6 fields (found 7 in "0 0 0 0 0/0 ? *")
+	at org.springframework.scheduling.support.CronSequenceGenerator.parse(CronSequenceGenerator.java:266) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:95) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:82) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.support.CronTrigger.<init>(CronTrigger.java:44) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at com.data.integration.config.ActivitySchedulerConfig.configureTasks(ActivitySchedulerConfig.java:79) ~[dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.finishRegistration(ScheduledAnnotationBeanPostProcessor.java:184) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:171) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:86) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:166) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:381) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:335) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:855) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:140) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+
+2019-07-05 15:40:36.326 ERROR 6204 --- [main] o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler ["http-nio-8080"]
+
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_211]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_211]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_211]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source) ~[na:1.8.0_211]
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source) ~[na:1.8.0_211]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:351) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:763) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:474) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986) [tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147) [tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239) [tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+
+2019-07-05 15:40:36.331 ERROR 6204 --- [main] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	... 21 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_211]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_211]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_211]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source) ~[na:1.8.0_211]
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source) ~[na:1.8.0_211]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:351) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:763) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:474) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986) ~[tomcat-embed-core-8.0.36.jar!/:8.0.36]
+	... 22 common frames omitted
+
+2019-07-05 15:40:36.349  INFO 6204 --- [main] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2019-07-05 15:40:36.358  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [main] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.FutureTask.awaitDone(Unknown Source)
+ java.util.concurrent.FutureTask.get(Unknown Source)
+ org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:971)
+ org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+ org.apache.catalina.core.StandardService.stopInternal(StandardService.java:502)
+ org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+ org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:808)
+ org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+ org.apache.catalina.startup.Tomcat.stop(Tomcat.java:356)
+ org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.stopSilently(TomcatEmbeddedServletContainer.java:181)
+ org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:158)
+ org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+ org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+ org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+ org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+ org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760)
+ org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360)
+ org.springframework.boot.SpringApplication.run(SpringApplication.java:306)
+ org.springframework.boot.SpringApplication.run(SpringApplication.java:1185)
+ org.springframework.boot.SpringApplication.run(SpringApplication.java:1174)
+ com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38)
+ sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ java.lang.reflect.Method.invoke(Unknown Source)
+ org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54)
+ org.springframework.boot.loader.Launcher.launch(Launcher.java:104)
+ org.springframework.boot.loader.Launcher.launch(Launcher.java:61)
+ org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52)
+2019-07-05 15:40:36.362  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [pool-4-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2019-07-05 15:40:36.364  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [pool-4-thread-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2019-07-05 15:40:36.366  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+2019-07-05 15:40:36.367  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HazlecastQueueConsumer-Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ com.hazelcast.spi.impl.AbstractInvocationFuture.get(AbstractInvocationFuture.java:156)
+ com.hazelcast.collection.impl.queue.QueueProxySupport.invokeAndGet(QueueProxySupport.java:177)
+ com.hazelcast.collection.impl.queue.QueueProxySupport.pollInternal(QueueProxySupport.java:124)
+ com.hazelcast.collection.impl.queue.QueueProxyImpl.poll(QueueProxyImpl.java:88)
+ com.hazelcast.collection.impl.queue.QueueProxyImpl.take(QueueProxyImpl.java:82)
+ com.data.integration.scheduler.HazlecastQueueConsumer$1.run(HazlecastQueueConsumer.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2019-07-05 15:40:36.368  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [QuartzScheduler_schedulerFactoryBean-NON_CLUSTERED_MisfireHandler] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ org.quartz.impl.jdbcjobstore.JobStoreSupport$MisfireHandler.run(JobStoreSupport.java:3992)
+2019-07-05 15:40:36.370  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [pool-7-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2019-07-05 15:40:36.374  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [pool-7-thread-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2019-07-05 15:40:36.376  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.scheduled] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+ com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+ com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+2019-07-05 15:40:36.378  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.event-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+ com.hazelcast.util.executor.StripedExecutor$Worker.run(StripedExecutor.java:170)
+2019-07-05 15:40:36.380  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.wait-notify] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.DelayQueue.poll(Unknown Source)
+ com.hazelcast.spi.impl.waitnotifyservice.impl.WaitNotifyServiceImpl$ExpirationTask.doRun(WaitNotifyServiceImpl.java:321)
+ com.hazelcast.spi.impl.waitnotifyservice.impl.WaitNotifyServiceImpl$ExpirationTask.run(WaitNotifyServiceImpl.java:306)
+ java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+ java.util.concurrent.FutureTask.run(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+ com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+ com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+2019-07-05 15:40:36.381  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.cached.thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.transfer(Unknown Source)
+ java.util.concurrent.SynchronousQueue.poll(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+ com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+ com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+2019-07-05 15:40:36.384  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.cached.thread-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.transfer(Unknown Source)
+ java.util.concurrent.SynchronousQueue.poll(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+ com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+ com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+2019-07-05 15:40:36.387  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.cached.thread-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.transfer(Unknown Source)
+ java.util.concurrent.SynchronousQueue.poll(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+ com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+ com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+2019-07-05 15:40:36.388  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.migration] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.hazelcast.internal.partition.impl.MigrationThread.doRun(MigrationThread.java:94)
+ com.hazelcast.internal.partition.impl.MigrationThread.run(MigrationThread.java:59)
+2019-07-05 15:40:36.389  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.InvocationMonitorThread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+2019-07-05 15:40:36.390  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.partition-operation.thread-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ com.hazelcast.internal.util.collection.MPSCQueue.takeAll(MPSCQueue.java:209)
+ com.hazelcast.internal.util.collection.MPSCQueue.take(MPSCQueue.java:141)
+ com.hazelcast.spi.impl.operationexecutor.impl.DefaultOperationQueue.take(DefaultOperationQueue.java:85)
+ com.hazelcast.spi.impl.operationexecutor.impl.OperationThread.run(OperationThread.java:97)
+2019-07-05 15:40:36.392  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.priority-generic-operation.thread-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+ com.hazelcast.spi.impl.operationexecutor.impl.DefaultOperationQueue.take(DefaultOperationQueue.java:76)
+ com.hazelcast.spi.impl.operationexecutor.impl.OperationThread.run(OperationThread.java:97)
+2019-07-05 15:40:36.393  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.generic-operation.thread-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(Unknown Source)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+ java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+ com.hazelcast.spi.impl.operationexecutor.impl.DefaultOperationQueue.take(DefaultOperationQueue.java:85)
+ com.hazelcast.spi.impl.operationexecutor.impl.OperationThread.run(OperationThread.java:97)
+2019-07-05 15:40:36.394  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.SlowOperationDetectorThread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ java.lang.Thread.sleep(Unknown Source)
+ java.util.concurrent.TimeUnit.sleep(Unknown Source)
+ com.hazelcast.spi.impl.operationexecutor.slowoperationdetector.SlowOperationDetector$DetectorThread.sleepInterval(SlowOperationDetector.java:290)
+ com.hazelcast.spi.impl.operationexecutor.slowoperationdetector.SlowOperationDetector$DetectorThread.run(SlowOperationDetector.java:154)
+2019-07-05 15:40:36.399  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.IO.thread-in-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+ sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+ sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+ sun.nio.ch.SelectorImpl.select(Unknown Source)
+ com.hazelcast.nio.tcp.nonblocking.NonBlockingIOThread.selectLoop(NonBlockingIOThread.java:246)
+ com.hazelcast.nio.tcp.nonblocking.NonBlockingIOThread.run(NonBlockingIOThread.java:201)
+2019-07-05 15:40:36.401  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.IO.thread-out-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+ sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+ sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+ sun.nio.ch.SelectorImpl.select(Unknown Source)
+ com.hazelcast.nio.tcp.nonblocking.NonBlockingIOThread.selectLoop(NonBlockingIOThread.java:246)
+ com.hazelcast.nio.tcp.nonblocking.NonBlockingIOThread.run(NonBlockingIOThread.java:201)
+2019-07-05 15:40:36.402  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.IO.thread-Acceptor] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+ sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+ sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+ sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+ sun.nio.ch.SelectorImpl.select(Unknown Source)
+ sun.nio.ch.SelectorImpl.select(Unknown Source)
+ com.hazelcast.nio.tcp.SocketAcceptorThread.acceptLoop(SocketAcceptorThread.java:117)
+ com.hazelcast.nio.tcp.SocketAcceptorThread.run(SocketAcceptorThread.java:103)
+2019-07-05 15:40:36.404  WARN 6204 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [hz._hzInstance_1_dev.cached.thread-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(Unknown Source)
+ java.util.concurrent.SynchronousQueue$TransferStack.transfer(Unknown Source)
+ java.util.concurrent.SynchronousQueue.poll(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+ com.hazelcast.util.executor.HazelcastManagedThread.executeRun(HazelcastManagedThread.java:76)
+ com.hazelcast.util.executor.HazelcastManagedThread.run(HazelcastManagedThread.java:92)
+2019-07-05 15:40:36.426 ERROR 6204 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat servlet container
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:165) ~[spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293) ~[spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141) ~[spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) ~[spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+Caused by: java.lang.IllegalStateException: Tomcat connector in failed state
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:159) ~[spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	... 18 common frames omitted
+
+2019-07-05 15:40:36.461  INFO 6204 --- [hz.ShutdownThread] com.hazelcast.instance.Node              : [172.21.32.1]:5702 [dev] [3.7] Running shutdown hook... Current state: ACTIVE

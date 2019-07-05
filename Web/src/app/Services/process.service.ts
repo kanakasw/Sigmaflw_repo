@@ -18,5 +18,4 @@ export class ProcessService {
   updateProcess(data: any): Observable<any> {
     return this.http.post<any>(ENDPOINTS.SERVICE_ADDRESS, data);
   }
-
 }

@@ -1,9 +1,9 @@
 
 export const ENDPOINTS = {
-    /* "SERVICE_ADDRESS": "http://192.168.1.161:8081/", */
+    // "SERVICE_ADDRESS": "http://192.168.1.161:8081/",
     /*   "SERVICE_ADDRESS": "http://192.168.1.120:8080/", */
-    "SERVICE_ADDRESS" : "http://localhost:8080/",
-    "AUTH_ENDPOINT": "/oauth/token", 
+     "SERVICE_ADDRESS" : "http://localhost:8080/", 
+    "AUTH_ENDPOINT": "/oauth/token",
     "FORGET_PASSWORD_ENDPOINT": "/users/password/sendResetPasswordLink",
     "LOGOUT_ENDPOINT": "/revoketoken",
     "GET_SUBSCRIBER_ENDPOINT": "/Integration/subscriber/username",

@@ -7,8 +7,8 @@
 <div id="main" class="bodyStyle">
 
   <nav class="navbar navbar-expand topNavStyle " *ngIf="currentuser">
-    <a href="#/home"><img src="../assets/images/logo.png" (click)="setActiveTab('dashboard');"
-        [ngClass]="{'activeTab': activeTab == 'dashboard'}" class="brand-logo" /></a>
+    <a href="#/home" (click)="setActiveTab('dashboard');"
+        [ngClass]="{'activeTab': activeTab == 'dashboard'}" class="brand-logo">Sigmaflw</a>
     <div class="navbar-nav" style="float:right">
       <a class="nav-item nav-link DashboardLink" href="#/home" (click)="setActiveTab('dashboard');"
         [ngClass]="{'activeTab' : activeTab == 'dashboard'}">Dashboard </a>

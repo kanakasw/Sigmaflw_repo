@@ -88,10 +88,7 @@ export class ProcessManagementComponent implements OnInit {
       this.processForm = this.formbuilder.group({
         proecessName: ['', Validators.required],
         processOwner: ['', Validators.required],
-        activityType: ['', Validators.required],
-        /*   inputFile: ['', Validators.required],
-          outputFile: ['', Validators.required],
-          ktrFile: ['', Validators.required] */
+        activityType: ['', Validators.required],       
       })
 
       if (this.selectedTriggerType == 'SCHEDULED')

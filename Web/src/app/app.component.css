@@ -44,14 +44,14 @@
     line-height: 3;
     font-weight: 600;
     font-size: 17px;
-  color: white;
+  color: ghostwhite;
   padding-right: 30px;
 }
 .manageProcesses{
     line-height: 3;
     font-weight: 600;
     font-size: 17px;
-  color: white;
+  color: ghostwhite;
   padding-right: 1  0px;
 }
 
@@ -84,12 +84,18 @@
 }   
 
 .brand-logo{
-    height: 44px;
+    /* height: 44px;
     width: 70px;
     margin-left: 11px;
-    margin-top: 6px;
+    margin-top: 6px; */
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 2.5;
+    text-decoration: none;
+    margin-left: 11px;
+    color: darkslategray !important;
 }
 
 .activeTab{
-    color: darkolivegreen;
+    color: currentColor;
 }

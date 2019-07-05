@@ -38,7 +38,10 @@ npm install -g @angular/cli
   - The format for input file to the KTR is {ProcessName}_input.{extension}.  
   - Output of the KTR will be {ProcessName}_output.{extension}.
 
-
+- To run existing database transformation process from application, follow following rules:  
+   - Create source database with name 'demo' in mysql using ~\Service\dataintegrationservice\src\main\DbScripts\SourceDbScript.sql.
+   - Create target database with name 'SamplePostgresDb' in postgress using    ~\Service\dataintegrationservice\src\main\DbScripts\TargetDbScript.sql.
+   - Update application-dev file from ~\Service\dataintegrationservice\src\main\resources accordingly.  
 ### Setting up
 
 Here's a brief introduction  about what a user must do in order to start using the application further:

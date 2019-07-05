@@ -1,8 +1,8 @@
 <div>
   <div class="Processheader">
-    <h4 *ngIf="showdiv == 'createProcess' && !usermodifying" style="color: floralwhite;font-weight: 600;">Create Process
+    <h4 *ngIf="showdiv == 'createProcess' && !usermodifying" style="color: currentColor;font-weight: 600;">Create Process
     </h4>
-    <h4 *ngIf="showdiv == 'modifyProcess'" style="color: floralwhite;font-weight: 600;">Modify Process</h4>
+    <h4 *ngIf="showdiv == 'modifyProcess'" style="color: currentColor;font-weight: 600;">Modify Process</h4>
   </div>
   <div *ngIf="showdiv == 'createProcess' || showdiv == 'modifyProcess'">
     <form [formGroup]="processForm" style="margin-top: 27px;">
