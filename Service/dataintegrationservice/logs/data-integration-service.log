@@ -696,3 +696,603 @@ Caused by: java.lang.IllegalStateException: Tomcat connector in failed state
 	... 18 common frames omitted
 
 2019-07-05 15:40:36.461  INFO 6204 --- [hz.ShutdownThread] com.hazelcast.instance.Node              : [172.21.32.1]:5702 [dev] [3.7] Running shutdown hook... Current state: ACTIVE
+2019-07-05 15:41:18.904  INFO 18088 --- [main] c.d.i.DataIntegrationApplication         : Starting DataIntegrationApplication v1.0.0 on DESKTOP-SHI8ACI with PID 18088 (D:\Process Integration\Repository\Kanaka_PDI\Service\dataintegrationservice\target\dataintegrationservice-1.0.0.jar started by admin in D:\Process Integration\Repository\Kanaka_PDI\Service\dataintegrationservice\target)
+2019-07-05 15:41:18.912  INFO 18088 --- [main] c.d.i.DataIntegrationApplication         : The following profiles are active: dev
+2019-07-05 15:41:25.384  INFO 18088 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2019-07-05 15:41:25.387  INFO 18088 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.36
+2019-07-05 15:41:27.286  INFO 18088 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-05 15:41:27.516  INFO 18088 --- [localhost-startStop-1] c.d.integration.config.SimpleCORSFilter  : SimpleCORSFilter init
+2019-07-05 15:41:29.029  INFO 18088 --- [localhost-startStop-1] c.h.instance.DefaultAddressPicker        : [LOCAL] [dev] [3.7] Prefer IPv4 stack is true.
+2019-07-05 15:41:29.158  INFO 18088 --- [localhost-startStop-1] c.h.instance.DefaultAddressPicker        : [LOCAL] [dev] [3.7] Picked [172.21.32.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+2019-07-05 15:41:29.244  INFO 18088 --- [localhost-startStop-1] com.hazelcast.system                     : [172.21.32.1]:5701 [dev] [3.7] Hazelcast 3.7 (20160817 - 1302600) starting at [172.21.32.1]:5701
+2019-07-05 15:41:29.245  INFO 18088 --- [localhost-startStop-1] com.hazelcast.system                     : [172.21.32.1]:5701 [dev] [3.7] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+2019-07-05 15:41:29.246  INFO 18088 --- [localhost-startStop-1] com.hazelcast.system                     : [172.21.32.1]:5701 [dev] [3.7] Configured Hazelcast Serialization version : 1
+2019-07-05 15:41:29.748  INFO 18088 --- [localhost-startStop-1] c.h.s.i.o.impl.BackpressureRegulator     : [172.21.32.1]:5701 [dev] [3.7] Backpressure is disabled
+2019-07-05 15:41:30.992  INFO 18088 --- [localhost-startStop-1] com.hazelcast.core.LifecycleService      : [172.21.32.1]:5701 [dev] [3.7] [172.21.32.1]:5701 is STARTING
+2019-07-05 15:41:31.280  INFO 18088 --- [localhost-startStop-1] c.h.s.i.o.impl.OperationExecutorImpl     : [172.21.32.1]:5701 [dev] [3.7] Starting 1 partition threads
+2019-07-05 15:41:31.281  INFO 18088 --- [localhost-startStop-1] c.h.s.i.o.impl.OperationExecutorImpl     : [172.21.32.1]:5701 [dev] [3.7] Starting 2 generic threads (1 dedicated for priority tasks)
+2019-07-05 15:41:31.290  INFO 18088 --- [localhost-startStop-1] c.h.n.t.n.NonBlockingIOThreadingModel    : [172.21.32.1]:5701 [dev] [3.7] TcpIpConnectionManager configured with Non Blocking IO-threading model: 1 input threads and 1 output threads
+2019-07-05 15:41:31.315  WARN 18088 --- [localhost-startStop-1] com.hazelcast.instance.Node              : [172.21.32.1]:5701 [dev] [3.7] No join method is enabled! Starting standalone.
+2019-07-05 15:41:31.381  INFO 18088 --- [localhost-startStop-1] com.hazelcast.core.LifecycleService      : [172.21.32.1]:5701 [dev] [3.7] [172.21.32.1]:5701 is STARTED
+2019-07-05 15:41:31.844  INFO 18088 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-05 15:41:32.077  INFO 18088 --- [localhost-startStop-1] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.11.Final}
+2019-07-05 15:41:32.085  INFO 18088 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-07-05 15:41:32.090  INFO 18088 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2019-07-05 15:41:32.726  INFO 18088 --- [localhost-startStop-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2019-07-05 15:41:33.092  INFO 18088 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2019-07-05 15:41:33.120  INFO 18088 --- [localhost-startStop-1] o.h.e.jdbc.internal.LobCreatorBuilder    : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2019-07-05 15:41:33.402  INFO 18088 --- [localhost-startStop-1] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-05 15:41:34.059  INFO 18088 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2019-07-05 15:41:34.819  INFO 18088 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2019-07-05 15:41:37.532  INFO 18088 --- [main] c.DataIntegrationServiceInitilizerHelper : Initilizing Kettle Enviorment
+2019-07-05 15:41:37.708  INFO 18088 --- [main] o.p.d.c.vfs.ConcurrentFileSystemManager  : Using "C:\Users\admin\AppData\Local\Temp\vfs_cache" as temporary files store.
+2019-07-05 15:41:37.783 DEBUG 18088 --- [main] o.p.d.c.vfs.ConcurrentFileSystemManager  : Skipping provider "org.apache.commons.vfs2.provider.webdav.WebdavFileProvider" because required class "org.apache.jackrabbit.webdav.client.methods.DavMethod" is not available.
+2019-07-05 15:41:37.788 DEBUG 18088 --- [main] o.p.d.c.vfs.ConcurrentFileSystemManager  : Skipping provider "org.apache.commons.vfs2.provider.hdfs.HdfsFileProvider" because required class "org.apache.hadoop.fs.FileSystem" is not available.
+2019-07-05 15:41:38.104  INFO 18088 --- [main] c.DataIntegrationServiceInitilizerHelper : DataIntegrationServiceJNDI Lookup successfull
+2019-07-05 15:41:38.107  INFO 18088 --- [main] c.DataIntegrationServiceInitilizerHelper : SourceDatabase Lookup successfull
+2019-07-05 15:41:38.108  INFO 18088 --- [main] c.DataIntegrationServiceInitilizerHelper : DestinationDatabase Lookup successfull
+2019-07-05 15:41:38.242  INFO 18088 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-07-05 15:41:38.283  INFO 18088 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-07-05 15:41:38.284  INFO 18088 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.3 created.
+2019-07-05 15:41:38.301  INFO 18088 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.3) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-07-05 15:41:38.302  INFO 18088 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-07-05 15:41:38.303  INFO 18088 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.3
+2019-07-05 15:41:38.308  INFO 18088 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@645aa696
+2019-07-05 15:41:38.701  INFO 18088 --- [main] c.d.i.s.ActivitySchedulerService         : Scheduled ActivityID =1 ,Cron Expression = 0 0 0 0 0/0 ? *
+2019-07-05 15:41:38.765 ERROR 18088 --- [main] c.d.i.s.ActivitySchedulerService         : Error occured while Scheduling activities
+
+java.lang.RuntimeException: CronExpression '0 0 0 0 0/0 ? *' is invalid.
+	at org.quartz.CronScheduleBuilder.cronSchedule(CronScheduleBuilder.java:111) ~[quartz-2.2.3.jar!/:na]
+	at com.data.integration.config.QuartzJobConfiguration.cronTrigger(QuartzJobConfiguration.java:67) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at com.data.integration.scheduler.ActivitySchedulerService.scheduleActivites(ActivitySchedulerService.java:250) ~[dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at com.data.integration.config.QuartzJobConfiguration.initialize(QuartzJobConfiguration.java:44) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772) [spring-beans-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+Caused by: java.text.ParseException: Day of month values must be between 1 and 31
+	at org.quartz.CronExpression.addToSet(CronExpression.java:975) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronExpression.storeExpressionVals(CronExpression.java:695) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronExpression.buildExpression(CronExpression.java:487) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronExpression.<init>(CronExpression.java:276) ~[quartz-2.2.3.jar!/:na]
+	at org.quartz.CronScheduleBuilder.cronSchedule(CronScheduleBuilder.java:107) ~[quartz-2.2.3.jar!/:na]
+	... 36 common frames omitted
+
+2019-07-05 15:41:39.698  INFO 18088 --- [HazlecastQueueConsumer-Thread-1] c.h.i.p.impl.PartitionStateManager       : [172.21.32.1]:5701 [dev] [3.7] Initializing cluster partition table arrangement...
+2019-07-05 15:41:43.349  INFO 18088 --- [main] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-07-05 15:41:43.361  INFO 18088 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-07-05 15:41:43.416  INFO 18088 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-07-05 15:41:43.433  INFO 18088 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-07-05 15:41:43.799  INFO 18088 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getIntegrationProcessesUsingGET_1
+2019-07-05 15:41:43.822  INFO 18088 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: uploadFileAndConfigureBatchExecutionUsingPOST_1
+2019-07-05 15:41:43.989  INFO 18088 --- [main] c.d.i.config.ActivitySchedulerConfig     : Scheduling activities 
+2019-07-05 15:41:44.038 ERROR 18088 --- [main] c.d.i.config.ActivitySchedulerConfig     : Error occured while Scheduling activities
+
+java.lang.IllegalArgumentException: Cron expression must consist of 6 fields (found 7 in "0 0 0 0 0/0 ? *")
+	at org.springframework.scheduling.support.CronSequenceGenerator.parse(CronSequenceGenerator.java:266) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:95) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:82) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.support.CronTrigger.<init>(CronTrigger.java:44) ~[spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at com.data.integration.config.ActivitySchedulerConfig.configureTasks(ActivitySchedulerConfig.java:79) ~[dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.finishRegistration(ScheduledAnnotationBeanPostProcessor.java:184) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:171) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.onApplicationEvent(ScheduledAnnotationBeanPostProcessor.java:86) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:166) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:381) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:335) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:855) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:140) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.2.7.RELEASE.jar!/:4.2.7.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:760) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:360) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.3.6.RELEASE.jar!/:1.3.6.RELEASE]
+	at com.data.integration.DataIntegrationApplication.main(DataIntegrationApplication.java:38) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_211]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:54) [dataintegrationservice-1.0.0.jar!/:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:104) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:61) [dataintegrationservice-1.0.0.jar:1.0.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) [dataintegrationservice-1.0.0.jar:1.0.0]
+
+2019-07-05 15:41:44.156  INFO 18088 --- [main] c.d.i.DataIntegrationApplication         : Started DataIntegrationApplication in 25.857 seconds (JVM running for 27.228)
+2019-07-05 15:44:18.231  INFO 18088 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-05 15:44:24.041  INFO 18088 --- [http-nio-8080-exec-6] c.d.i.c.IntegrationProcessController     : Fetching IntegrationProcess with IntegrationProcessID : 1
+2019-07-05 15:44:24.257  INFO 18088 --- [http-nio-8080-exec-6] c.d.i.s.impl.ETLActivityExecutorImpl     : INTEGRATION Step Executor,activityID = 1
+2019-07-05 15:44:29.560  INFO 18088 --- [http-nio-8080-exec-6] c.d.i.s.e.impl.TransformationExecutor    : 2019/07/05 15:44:24 - di-601-mysql-postgres - Dispatching started for transformation [di-601-mysql-postgres]
+2019/07/05 15:44:24 - di-601-mysql-postgres - This is not a replay transformation
+2019/07/05 15:44:24 - di-601-mysql-postgres - I found 5 different steps to launch.
+2019/07/05 15:44:24 - di-601-mysql-postgres - Allocating rowsets...
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocating rowsets for step 0 --> Table input
+2019/07/05 15:44:24 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 15:44:24 - di-601-mysql-postgres - Transformation allocated new rowset [Table input.0 - Select values.0]
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocated 1 rowsets for step 0 --> Table input  
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocating rowsets for step 1 --> Select values
+2019/07/05 15:44:24 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 15:44:24 - di-601-mysql-postgres - Transformation allocated new rowset [Select values.0 - Table output.0]
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocated 2 rowsets for step 1 --> Select values  
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocating rowsets for step 2 --> Table output
+2019/07/05 15:44:24 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 15:44:24 - di-601-mysql-postgres - Transformation allocated new rowset [Table output.0 - Concat Fields.0]
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocated 3 rowsets for step 2 --> Table output  
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocating rowsets for step 3 --> Concat Fields
+2019/07/05 15:44:24 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 15:44:24 - di-601-mysql-postgres - Transformation allocated new rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocated 4 rowsets for step 3 --> Concat Fields  
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocating rowsets for step 4 --> Table output 2
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Allocated 4 rowsets for step 4 --> Table output 2  
+2019/07/05 15:44:24 - di-601-mysql-postgres - Allocating Steps & StepData...
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation is about to allocate step [Table input] of type [TableInput]
+2019/07/05 15:44:24 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 15:44:24 - Table input.0 - distribution activated
+2019/07/05 15:44:24 - Table input.0 - Starting allocation of buffers & new threads...
+2019/07/05 15:44:24 - Table input.0 - Step info: nrinput=0 nroutput=1
+2019/07/05 15:44:24 - Table input.0 - output rel. is  1:1
+2019/07/05 15:44:24 - Table input.0 - Found output rowset [Table input.0 - Select values.0]
+2019/07/05 15:44:24 - Table input.0 - Finished dispatching
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table input].0
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation is about to allocate step [Select values] of type [SelectValues]
+2019/07/05 15:44:24 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 15:44:24 - Select values.0 - distribution activated
+2019/07/05 15:44:24 - Select values.0 - Starting allocation of buffers & new threads...
+2019/07/05 15:44:24 - Select values.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 15:44:24 - Select values.0 - Got previous step from [Select values] #0 --> Table input
+2019/07/05 15:44:24 - Select values.0 - input rel is 1:1
+2019/07/05 15:44:24 - Select values.0 - Found input rowset [Table input.0 - Select values.0]
+2019/07/05 15:44:24 - Select values.0 - output rel. is  1:1
+2019/07/05 15:44:24 - Select values.0 - Found output rowset [Select values.0 - Table output.0]
+2019/07/05 15:44:24 - Select values.0 - Finished dispatching
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation has allocated a new step: [Select values].0
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation is about to allocate step [Table output] of type [TableOutput]
+2019/07/05 15:44:24 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 15:44:24 - Table output.0 - distribution activated
+2019/07/05 15:44:24 - Table output.0 - Starting allocation of buffers & new threads...
+2019/07/05 15:44:24 - Table output.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 15:44:24 - Table output.0 - Got previous step from [Table output] #0 --> Select values
+2019/07/05 15:44:24 - Table output.0 - input rel is 1:1
+2019/07/05 15:44:24 - Table output.0 - Found input rowset [Select values.0 - Table output.0]
+2019/07/05 15:44:24 - Table output.0 - output rel. is  1:1
+2019/07/05 15:44:24 - Table output.0 - Found output rowset [Table output.0 - Concat Fields.0]
+2019/07/05 15:44:24 - Table output.0 - Finished dispatching
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table output].0
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation is about to allocate step [Concat Fields] of type [ConcatFields]
+2019/07/05 15:44:24 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 15:44:24 - Concat Fields.0 - distribution activated
+2019/07/05 15:44:24 - Concat Fields.0 - Starting allocation of buffers & new threads...
+2019/07/05 15:44:24 - Concat Fields.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 15:44:24 - Concat Fields.0 - Got previous step from [Concat Fields] #0 --> Table output
+2019/07/05 15:44:24 - Concat Fields.0 - input rel is 1:1
+2019/07/05 15:44:24 - Concat Fields.0 - Found input rowset [Table output.0 - Concat Fields.0]
+2019/07/05 15:44:24 - Concat Fields.0 - output rel. is  1:1
+2019/07/05 15:44:24 - Concat Fields.0 - Found output rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 15:44:24 - Concat Fields.0 - Finished dispatching
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation has allocated a new step: [Concat Fields].0
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation is about to allocate step [Table output 2] of type [TableOutput]
+2019/07/05 15:44:24 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 15:44:24 - Table output 2.0 - distribution activated
+2019/07/05 15:44:24 - Table output 2.0 - Starting allocation of buffers & new threads...
+2019/07/05 15:44:24 - Table output 2.0 - Step info: nrinput=1 nroutput=0
+2019/07/05 15:44:24 - Table output 2.0 - Got previous step from [Table output 2] #0 --> Concat Fields
+2019/07/05 15:44:24 - Table output 2.0 - input rel is 1:1
+2019/07/05 15:44:24 - Table output 2.0 - Found input rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 15:44:24 - Table output 2.0 - Finished dispatching
+2019/07/05 15:44:24 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table output 2].0
+2019/07/05 15:44:24 - di-601-mysql-postgres - This transformation can be replayed with replay date: 2019/07/05 15:44:24
+2019/07/05 15:44:24 - di-601-mysql-postgres - Initialising 5 steps...
+2019/07/05 15:44:24 - Select values.0 - Released server socket on port 0
+2019/07/05 15:44:24 - Table output.0 - Released server socket on port 0
+2019/07/05 15:44:24 - Table output 2.0 - Released server socket on port 0
+2019/07/05 15:44:24 - Table input.0 - Released server socket on port 0
+2019/07/05 15:44:24 - Concat Fields.0 - Released server socket on port 0
+2019/07/05 15:44:24 - sourcedatabase - New database connection defined
+2019/07/05 15:44:24 - destinationdatabase - New database connection defined
+2019/07/05 15:44:24 - destinationdatabase - New database connection defined
+2019/07/05 15:44:24 - Table input.0 - Connected to database...
+2019/07/05 15:44:24 - Table output 2.0 - Connected to database [destinationdatabase] (commit=1000)
+2019/07/05 15:44:24 - Table output.0 - Connected to database [destinationdatabase] (commit=1000)
+2019/07/05 15:44:24 - destinationdatabase - Auto commit off
+2019/07/05 15:44:24 - destinationdatabase - Auto commit off
+2019/07/05 15:44:24 - di-601-mysql-postgres - Step [Table input.0] initialized flawlessly.
+2019/07/05 15:44:24 - di-601-mysql-postgres - Step [Select values.0] initialized flawlessly.
+2019/07/05 15:44:24 - di-601-mysql-postgres - Step [Table output.0] initialized flawlessly.
+2019/07/05 15:44:24 - di-601-mysql-postgres - Step [Concat Fields.0] initialized flawlessly.
+2019/07/05 15:44:24 - di-601-mysql-postgres - Step [Table output 2.0] initialized flawlessly.
+2019/07/05 15:44:29 - Select values.0 - Starting to run...
+2019/07/05 15:44:29 - Table output.0 - Starting to run...
+2019/07/05 15:44:29 - Concat Fields.0 - Starting to run...
+2019/07/05 15:44:29 - Table input.0 - Starting to run...
+2019/07/05 15:44:29 - Table output 2.0 - Starting to run...
+2019/07/05 15:44:29 - di-601-mysql-postgres - Transformation has allocated 5 threads and 4 rowsets.
+2019/07/05 15:44:29 - Table input.0 - SQL query : SELECT
+2019/07/05 15:44:29 - Table input.0 -   Id
+2019/07/05 15:44:29 - Table input.0 - , EmpName
+2019/07/05 15:44:29 - Table input.0 - , Address1
+2019/07/05 15:44:29 - Table input.0 - , Address2
+2019/07/05 15:44:29 - Table input.0 - , contactNumber
+2019/07/05 15:44:29 - Table input.0 - , contactPerson
+2019/07/05 15:44:29 - Table input.0 - , Departmentid
+2019/07/05 15:44:29 - Table input.0 - , HasSpouse
+2019/07/05 15:44:29 - Table input.0 - , JoiningDate
+2019/07/05 15:44:29 - Table input.0 - , ConfirmationDate
+2019/07/05 15:44:29 - Table input.0 - , ReportingManager
+2019/07/05 15:44:29 - Table input.0 - FROM employee
+2019/07/05 15:44:29 - Table input.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 15:44:29 - Table input.0 - Finished reading query, closing connection.
+2019/07/05 15:44:29 - sourcedatabase - Connection to database closed!
+2019/07/05 15:44:29 - Table input.0 - Finished processing (I=2, O=0, R=0, W=2, U=0, E=0)
+2019/07/05 15:44:29 - Select values.0 - Got row from previous step: [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [0], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz]
+2019/07/05 15:44:29 - Select values.0 - Wrote row to next step: [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz]
+2019/07/05 15:44:29 - Table output.0 - Prepared statement : INSERT INTO "sampleSchema".employee (empid, JoiningDate, ConfirmationDate, ReportingManager, departmentid) VALUES ( ?,  ?,  ?,  ?,  ?)
+2019/07/05 15:44:29 - Select values.0 - Got row from previous step: [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [0], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh]
+2019/07/05 15:44:29 - Select values.0 - Wrote row to next step: [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh]
+2019/07/05 15:44:29 - Table output.0 - Written row: [12ds], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz], [12]
+2019/07/05 15:44:29 - Table output.0 - Written row: [13fs], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh], [13]
+2019/07/05 15:44:29 - Concat Fields.0 - Wrote row #1 : [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz], [fdkbfsa-fkdgfk]
+2019/07/05 15:44:29 - Select values.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 15:44:29 - Table output 2.0 - Prepared statement : INSERT INTO "sampleSchema".employeedetails (empdetailsid, EmpName, contactNumber, contactPerson, HasSpouse, address) VALUES ( ?,  ?,  ?,  ?,  ?,  ?)
+2019/07/05 15:44:29 - Select values.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2019/07/05 15:44:29 - Table output 2.0 - Written row: [12ds], [vivek], [123456], [fdhfgh], [N], [fdkbfsa-fkdgfk]
+2019/07/05 15:44:29 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 15:44:29 - Concat Fields.0 - Wrote row #2 : [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh], [fsfsd-fdzss]
+2019/07/05 15:44:29 - Table output 2.0 - Written row: [13fs], [afgsg], [765647], [fgdgd], [N], [fsfsd-fdzss]
+2019/07/05 15:44:29 - Table output.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 15:44:29 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 15:44:29 - destinationdatabase - Connection to database closed!
+2019/07/05 15:44:29 - Table output.0 - Finished processing (I=0, O=2, R=2, W=2, U=0, E=0)
+2019/07/05 15:44:29 - Concat Fields.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 15:44:29 - Concat Fields.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2019/07/05 15:44:29 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 15:44:29 - Table output 2.0 - Signaling 'output done' to 0 output rowsets.
+2019/07/05 15:44:29 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 15:44:29 - destinationdatabase - Connection to database closed!
+2019/07/05 15:44:29 - Table output 2.0 - Finished processing (I=0, O=2, R=2, W=2, U=0, E=0)
+
+2019-07-05 15:44:29.563  INFO 18088 --- [http-nio-8080-exec-6] c.d.i.service.util.ActivityUtil          : Next Step to trigger found : 2
+2019-07-05 15:44:29.642  INFO 18088 --- [ForkJoinPool-1-worker-1] c.d.i.s.impl.ENDActivityExecutorImpl     : END Step Executor,activityID = 2
+2019-07-05 16:05:35.071  INFO 18088 --- [http-nio-8080-exec-3] c.d.i.c.IntegrationProcessController     : Fetching IntegrationProcess with IntegrationProcessID : 1
+2019-07-05 16:05:35.091  INFO 18088 --- [http-nio-8080-exec-3] c.d.i.s.impl.ETLActivityExecutorImpl     : INTEGRATION Step Executor,activityID = 1
+2019-07-05 16:05:35.269  INFO 18088 --- [http-nio-8080-exec-3] c.d.i.s.e.impl.TransformationExecutor    : 2019/07/05 16:05:35 - di-601-mysql-postgres - Dispatching started for transformation [di-601-mysql-postgres]
+2019/07/05 16:05:35 - di-601-mysql-postgres - This is not a replay transformation
+2019/07/05 16:05:35 - di-601-mysql-postgres - I found 5 different steps to launch.
+2019/07/05 16:05:35 - di-601-mysql-postgres - Allocating rowsets...
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocating rowsets for step 0 --> Table input
+2019/07/05 16:05:35 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:05:35 - di-601-mysql-postgres - Transformation allocated new rowset [Table input.0 - Select values.0]
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocated 1 rowsets for step 0 --> Table input  
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocating rowsets for step 1 --> Select values
+2019/07/05 16:05:35 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:05:35 - di-601-mysql-postgres - Transformation allocated new rowset [Select values.0 - Table output.0]
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocated 2 rowsets for step 1 --> Select values  
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocating rowsets for step 2 --> Table output
+2019/07/05 16:05:35 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:05:35 - di-601-mysql-postgres - Transformation allocated new rowset [Table output.0 - Concat Fields.0]
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocated 3 rowsets for step 2 --> Table output  
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocating rowsets for step 3 --> Concat Fields
+2019/07/05 16:05:35 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:05:35 - di-601-mysql-postgres - Transformation allocated new rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocated 4 rowsets for step 3 --> Concat Fields  
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocating rowsets for step 4 --> Table output 2
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Allocated 4 rowsets for step 4 --> Table output 2  
+2019/07/05 16:05:35 - di-601-mysql-postgres - Allocating Steps & StepData...
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation is about to allocate step [Table input] of type [TableInput]
+2019/07/05 16:05:35 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:05:35 - Table input.0 - distribution activated
+2019/07/05 16:05:35 - Table input.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:05:35 - Table input.0 - Step info: nrinput=0 nroutput=1
+2019/07/05 16:05:35 - Table input.0 - output rel. is  1:1
+2019/07/05 16:05:35 - Table input.0 - Found output rowset [Table input.0 - Select values.0]
+2019/07/05 16:05:35 - Table input.0 - Finished dispatching
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table input].0
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation is about to allocate step [Select values] of type [SelectValues]
+2019/07/05 16:05:35 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:05:35 - Select values.0 - distribution activated
+2019/07/05 16:05:35 - Select values.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:05:35 - Select values.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 16:05:35 - Select values.0 - Got previous step from [Select values] #0 --> Table input
+2019/07/05 16:05:35 - Select values.0 - input rel is 1:1
+2019/07/05 16:05:35 - Select values.0 - Found input rowset [Table input.0 - Select values.0]
+2019/07/05 16:05:35 - Select values.0 - output rel. is  1:1
+2019/07/05 16:05:35 - Select values.0 - Found output rowset [Select values.0 - Table output.0]
+2019/07/05 16:05:35 - Select values.0 - Finished dispatching
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation has allocated a new step: [Select values].0
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation is about to allocate step [Table output] of type [TableOutput]
+2019/07/05 16:05:35 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:05:35 - Table output.0 - distribution activated
+2019/07/05 16:05:35 - Table output.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:05:35 - Table output.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 16:05:35 - Table output.0 - Got previous step from [Table output] #0 --> Select values
+2019/07/05 16:05:35 - Table output.0 - input rel is 1:1
+2019/07/05 16:05:35 - Table output.0 - Found input rowset [Select values.0 - Table output.0]
+2019/07/05 16:05:35 - Table output.0 - output rel. is  1:1
+2019/07/05 16:05:35 - Table output.0 - Found output rowset [Table output.0 - Concat Fields.0]
+2019/07/05 16:05:35 - Table output.0 - Finished dispatching
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table output].0
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation is about to allocate step [Concat Fields] of type [ConcatFields]
+2019/07/05 16:05:35 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:05:35 - Concat Fields.0 - distribution activated
+2019/07/05 16:05:35 - Concat Fields.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:05:35 - Concat Fields.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 16:05:35 - Concat Fields.0 - Got previous step from [Concat Fields] #0 --> Table output
+2019/07/05 16:05:35 - Concat Fields.0 - input rel is 1:1
+2019/07/05 16:05:35 - Concat Fields.0 - Found input rowset [Table output.0 - Concat Fields.0]
+2019/07/05 16:05:35 - Concat Fields.0 - output rel. is  1:1
+2019/07/05 16:05:35 - Concat Fields.0 - Found output rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 16:05:35 - Concat Fields.0 - Finished dispatching
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation has allocated a new step: [Concat Fields].0
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation is about to allocate step [Table output 2] of type [TableOutput]
+2019/07/05 16:05:35 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:05:35 - Table output 2.0 - distribution activated
+2019/07/05 16:05:35 - Table output 2.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:05:35 - Table output 2.0 - Step info: nrinput=1 nroutput=0
+2019/07/05 16:05:35 - Table output 2.0 - Got previous step from [Table output 2] #0 --> Concat Fields
+2019/07/05 16:05:35 - Table output 2.0 - input rel is 1:1
+2019/07/05 16:05:35 - Table output 2.0 - Found input rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 16:05:35 - Table output 2.0 - Finished dispatching
+2019/07/05 16:05:35 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table output 2].0
+2019/07/05 16:05:35 - di-601-mysql-postgres - This transformation can be replayed with replay date: 2019/07/05 16:05:35
+2019/07/05 16:05:35 - di-601-mysql-postgres - Initialising 5 steps...
+2019/07/05 16:05:35 - Table input.0 - Released server socket on port 0
+2019/07/05 16:05:35 - Select values.0 - Released server socket on port 0
+2019/07/05 16:05:35 - Table output.0 - Released server socket on port 0
+2019/07/05 16:05:35 - Table output 2.0 - Released server socket on port 0
+2019/07/05 16:05:35 - Concat Fields.0 - Released server socket on port 0
+2019/07/05 16:05:35 - sourcedatabase - New database connection defined
+2019/07/05 16:05:35 - Table input.0 - Connected to database...
+2019/07/05 16:05:35 - destinationdatabase - New database connection defined
+2019/07/05 16:05:35 - destinationdatabase - New database connection defined
+2019/07/05 16:05:35 - Table output 2.0 - Connected to database [destinationdatabase] (commit=1000)
+2019/07/05 16:05:35 - Table output.0 - Connected to database [destinationdatabase] (commit=1000)
+2019/07/05 16:05:35 - destinationdatabase - Auto commit off
+2019/07/05 16:05:35 - destinationdatabase - Auto commit off
+2019/07/05 16:05:35 - di-601-mysql-postgres - Step [Table input.0] initialized flawlessly.
+2019/07/05 16:05:35 - di-601-mysql-postgres - Step [Select values.0] initialized flawlessly.
+2019/07/05 16:05:35 - di-601-mysql-postgres - Step [Table output.0] initialized flawlessly.
+2019/07/05 16:05:35 - di-601-mysql-postgres - Step [Concat Fields.0] initialized flawlessly.
+2019/07/05 16:05:35 - di-601-mysql-postgres - Step [Table output 2.0] initialized flawlessly.
+2019/07/05 16:05:35 - di-601-mysql-postgres - Transformation has allocated 5 threads and 4 rowsets.
+2019/07/05 16:05:35 - Concat Fields.0 - Starting to run...
+2019/07/05 16:05:35 - Select values.0 - Starting to run...
+2019/07/05 16:05:35 - Table output 2.0 - Starting to run...
+2019/07/05 16:05:35 - Table input.0 - Starting to run...
+2019/07/05 16:05:35 - Table output.0 - Starting to run...
+2019/07/05 16:05:35 - Table input.0 - SQL query : SELECT
+2019/07/05 16:05:35 - Table input.0 -   Id
+2019/07/05 16:05:35 - Table input.0 - , EmpName
+2019/07/05 16:05:35 - Table input.0 - , Address1
+2019/07/05 16:05:35 - Table input.0 - , Address2
+2019/07/05 16:05:35 - Table input.0 - , contactNumber
+2019/07/05 16:05:35 - Table input.0 - , contactPerson
+2019/07/05 16:05:35 - Table input.0 - , Departmentid
+2019/07/05 16:05:35 - Table input.0 - , HasSpouse
+2019/07/05 16:05:35 - Table input.0 - , JoiningDate
+2019/07/05 16:05:35 - Table input.0 - , ConfirmationDate
+2019/07/05 16:05:35 - Table input.0 - , ReportingManager
+2019/07/05 16:05:35 - Table input.0 - FROM employee
+2019/07/05 16:05:35 - Table input.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:05:35 - Table input.0 - Finished reading query, closing connection.
+2019/07/05 16:05:35 - Select values.0 - Got row from previous step: [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [0], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz]
+2019/07/05 16:05:35 - sourcedatabase - Connection to database closed!
+2019/07/05 16:05:35 - Table input.0 - Finished processing (I=2, O=0, R=0, W=2, U=0, E=0)
+2019/07/05 16:05:35 - Select values.0 - Wrote row to next step: [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz]
+2019/07/05 16:05:35 - Table output.0 - Prepared statement : INSERT INTO "sampleSchema".employee (empid, JoiningDate, ConfirmationDate, ReportingManager, departmentid) VALUES ( ?,  ?,  ?,  ?,  ?)
+2019/07/05 16:05:35 - Select values.0 - Got row from previous step: [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [0], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh]
+2019/07/05 16:05:35 - Select values.0 - Wrote row to next step: [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh]
+2019/07/05 16:05:35 - Table output.0 - Written row: [12ds], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz], [12]
+2019/07/05 16:05:35 - Concat Fields.0 - Wrote row #1 : [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz], [fdkbfsa-fkdgfk]
+2019/07/05 16:05:35 - Table output.0 - Written row: [13fs], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh], [13]
+2019/07/05 16:05:35 - Table output 2.0 - Prepared statement : INSERT INTO "sampleSchema".employeedetails (empdetailsid, EmpName, contactNumber, contactPerson, HasSpouse, address) VALUES ( ?,  ?,  ?,  ?,  ?,  ?)
+2019/07/05 16:05:35 - Select values.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:05:35 - Table output 2.0 - Written row: [12ds], [vivek], [123456], [fdhfgh], [N], [fdkbfsa-fkdgfk]
+2019/07/05 16:05:35 - Select values.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2019/07/05 16:05:35 - Concat Fields.0 - Wrote row #2 : [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh], [fsfsd-fdzss]
+2019/07/05 16:05:35 - Table output 2.0 - Written row: [13fs], [afgsg], [765647], [fgdgd], [N], [fsfsd-fdzss]
+2019/07/05 16:05:35 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:05:35 - Table output.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:05:35 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:05:35 - destinationdatabase - Connection to database closed!
+2019/07/05 16:05:35 - Table output.0 - Finished processing (I=0, O=2, R=2, W=2, U=0, E=0)
+2019/07/05 16:05:35 - Concat Fields.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:05:35 - Concat Fields.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2019/07/05 16:05:35 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:05:35 - Table output 2.0 - Signaling 'output done' to 0 output rowsets.
+2019/07/05 16:05:35 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:05:35 - destinationdatabase - Connection to database closed!
+2019/07/05 16:05:35 - Table output 2.0 - Finished processing (I=0, O=2, R=2, W=2, U=0, E=0)
+
+2019-07-05 16:05:35.273  INFO 18088 --- [http-nio-8080-exec-3] c.d.i.service.util.ActivityUtil          : Next Step to trigger found : 2
+2019-07-05 16:05:35.296  INFO 18088 --- [ForkJoinPool-1-worker-2] c.d.i.s.impl.ENDActivityExecutorImpl     : END Step Executor,activityID = 2
+2019-07-05 16:08:20.331  INFO 18088 --- [http-nio-8080-exec-2] c.d.i.c.IntegrationProcessController     : Fetching IntegrationProcess with IntegrationProcessID : 1
+2019-07-05 16:08:20.348  INFO 18088 --- [http-nio-8080-exec-2] c.d.i.s.impl.ETLActivityExecutorImpl     : INTEGRATION Step Executor,activityID = 1
+2019-07-05 16:08:20.534  INFO 18088 --- [http-nio-8080-exec-2] c.d.i.s.e.impl.TransformationExecutor    : 2019/07/05 16:08:20 - di-601-mysql-postgres - Dispatching started for transformation [di-601-mysql-postgres]
+2019/07/05 16:08:20 - di-601-mysql-postgres - This is not a replay transformation
+2019/07/05 16:08:20 - di-601-mysql-postgres - I found 5 different steps to launch.
+2019/07/05 16:08:20 - di-601-mysql-postgres - Allocating rowsets...
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocating rowsets for step 0 --> Table input
+2019/07/05 16:08:20 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:08:20 - di-601-mysql-postgres - Transformation allocated new rowset [Table input.0 - Select values.0]
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocated 1 rowsets for step 0 --> Table input  
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocating rowsets for step 1 --> Select values
+2019/07/05 16:08:20 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:08:20 - di-601-mysql-postgres - Transformation allocated new rowset [Select values.0 - Table output.0]
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocated 2 rowsets for step 1 --> Select values  
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocating rowsets for step 2 --> Table output
+2019/07/05 16:08:20 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:08:20 - di-601-mysql-postgres - Transformation allocated new rowset [Table output.0 - Concat Fields.0]
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocated 3 rowsets for step 2 --> Table output  
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocating rowsets for step 3 --> Concat Fields
+2019/07/05 16:08:20 - di-601-mysql-postgres -   prevcopies = 1, nextcopies=1
+2019/07/05 16:08:20 - di-601-mysql-postgres - Transformation allocated new rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocated 4 rowsets for step 3 --> Concat Fields  
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocating rowsets for step 4 --> Table output 2
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Allocated 4 rowsets for step 4 --> Table output 2  
+2019/07/05 16:08:20 - di-601-mysql-postgres - Allocating Steps & StepData...
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation is about to allocate step [Table input] of type [TableInput]
+2019/07/05 16:08:20 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:08:20 - Table input.0 - distribution activated
+2019/07/05 16:08:20 - Table input.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:08:20 - Table input.0 - Step info: nrinput=0 nroutput=1
+2019/07/05 16:08:20 - Table input.0 - output rel. is  1:1
+2019/07/05 16:08:20 - Table input.0 - Found output rowset [Table input.0 - Select values.0]
+2019/07/05 16:08:20 - Table input.0 - Finished dispatching
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table input].0
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation is about to allocate step [Select values] of type [SelectValues]
+2019/07/05 16:08:20 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:08:20 - Select values.0 - distribution activated
+2019/07/05 16:08:20 - Select values.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:08:20 - Select values.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 16:08:20 - Select values.0 - Got previous step from [Select values] #0 --> Table input
+2019/07/05 16:08:20 - Select values.0 - input rel is 1:1
+2019/07/05 16:08:20 - Select values.0 - Found input rowset [Table input.0 - Select values.0]
+2019/07/05 16:08:20 - Select values.0 - output rel. is  1:1
+2019/07/05 16:08:20 - Select values.0 - Found output rowset [Select values.0 - Table output.0]
+2019/07/05 16:08:20 - Select values.0 - Finished dispatching
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation has allocated a new step: [Select values].0
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation is about to allocate step [Table output] of type [TableOutput]
+2019/07/05 16:08:20 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:08:20 - Table output.0 - distribution activated
+2019/07/05 16:08:20 - Table output.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:08:20 - Table output.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 16:08:20 - Table output.0 - Got previous step from [Table output] #0 --> Select values
+2019/07/05 16:08:20 - Table output.0 - input rel is 1:1
+2019/07/05 16:08:20 - Table output.0 - Found input rowset [Select values.0 - Table output.0]
+2019/07/05 16:08:20 - Table output.0 - output rel. is  1:1
+2019/07/05 16:08:20 - Table output.0 - Found output rowset [Table output.0 - Concat Fields.0]
+2019/07/05 16:08:20 - Table output.0 - Finished dispatching
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table output].0
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation is about to allocate step [Concat Fields] of type [ConcatFields]
+2019/07/05 16:08:20 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:08:20 - Concat Fields.0 - distribution activated
+2019/07/05 16:08:20 - Concat Fields.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:08:20 - Concat Fields.0 - Step info: nrinput=1 nroutput=1
+2019/07/05 16:08:20 - Concat Fields.0 - Got previous step from [Concat Fields] #0 --> Table output
+2019/07/05 16:08:20 - Concat Fields.0 - input rel is 1:1
+2019/07/05 16:08:20 - Concat Fields.0 - Found input rowset [Table output.0 - Concat Fields.0]
+2019/07/05 16:08:20 - Concat Fields.0 - output rel. is  1:1
+2019/07/05 16:08:20 - Concat Fields.0 - Found output rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 16:08:20 - Concat Fields.0 - Finished dispatching
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation has allocated a new step: [Concat Fields].0
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation is about to allocate step [Table output 2] of type [TableOutput]
+2019/07/05 16:08:20 - di-601-mysql-postgres -   Step has nrcopies=1
+2019/07/05 16:08:20 - Table output 2.0 - distribution activated
+2019/07/05 16:08:20 - Table output 2.0 - Starting allocation of buffers & new threads...
+2019/07/05 16:08:20 - Table output 2.0 - Step info: nrinput=1 nroutput=0
+2019/07/05 16:08:20 - Table output 2.0 - Got previous step from [Table output 2] #0 --> Concat Fields
+2019/07/05 16:08:20 - Table output 2.0 - input rel is 1:1
+2019/07/05 16:08:20 - Table output 2.0 - Found input rowset [Concat Fields.0 - Table output 2.0]
+2019/07/05 16:08:20 - Table output 2.0 - Finished dispatching
+2019/07/05 16:08:20 - di-601-mysql-postgres -  Transformation has allocated a new step: [Table output 2].0
+2019/07/05 16:08:20 - di-601-mysql-postgres - This transformation can be replayed with replay date: 2019/07/05 16:08:20
+2019/07/05 16:08:20 - di-601-mysql-postgres - Initialising 5 steps...
+2019/07/05 16:08:20 - Select values.0 - Released server socket on port 0
+2019/07/05 16:08:20 - Table output.0 - Released server socket on port 0
+2019/07/05 16:08:20 - Concat Fields.0 - Released server socket on port 0
+2019/07/05 16:08:20 - Table output 2.0 - Released server socket on port 0
+2019/07/05 16:08:20 - Table input.0 - Released server socket on port 0
+2019/07/05 16:08:20 - destinationdatabase - New database connection defined
+2019/07/05 16:08:20 - sourcedatabase - New database connection defined
+2019/07/05 16:08:20 - destinationdatabase - New database connection defined
+2019/07/05 16:08:20 - Table output 2.0 - Connected to database [destinationdatabase] (commit=1000)
+2019/07/05 16:08:20 - Table output.0 - Connected to database [destinationdatabase] (commit=1000)
+2019/07/05 16:08:20 - Table input.0 - Connected to database...
+2019/07/05 16:08:20 - destinationdatabase - Auto commit off
+2019/07/05 16:08:20 - destinationdatabase - Auto commit off
+2019/07/05 16:08:20 - di-601-mysql-postgres - Step [Table input.0] initialized flawlessly.
+2019/07/05 16:08:20 - di-601-mysql-postgres - Step [Select values.0] initialized flawlessly.
+2019/07/05 16:08:20 - di-601-mysql-postgres - Step [Table output.0] initialized flawlessly.
+2019/07/05 16:08:20 - di-601-mysql-postgres - Step [Concat Fields.0] initialized flawlessly.
+2019/07/05 16:08:20 - di-601-mysql-postgres - Step [Table output 2.0] initialized flawlessly.
+2019/07/05 16:08:20 - di-601-mysql-postgres - Transformation has allocated 5 threads and 4 rowsets.
+2019/07/05 16:08:20 - Select values.0 - Starting to run...
+2019/07/05 16:08:20 - Table output.0 - Starting to run...
+2019/07/05 16:08:20 - Concat Fields.0 - Starting to run...
+2019/07/05 16:08:20 - Table output 2.0 - Starting to run...
+2019/07/05 16:08:20 - Table input.0 - Starting to run...
+2019/07/05 16:08:20 - Table input.0 - SQL query : SELECT
+2019/07/05 16:08:20 - Table input.0 -   Id
+2019/07/05 16:08:20 - Table input.0 - , EmpName
+2019/07/05 16:08:20 - Table input.0 - , Address1
+2019/07/05 16:08:20 - Table input.0 - , Address2
+2019/07/05 16:08:20 - Table input.0 - , contactNumber
+2019/07/05 16:08:20 - Table input.0 - , contactPerson
+2019/07/05 16:08:20 - Table input.0 - , Departmentid
+2019/07/05 16:08:20 - Table input.0 - , HasSpouse
+2019/07/05 16:08:20 - Table input.0 - , JoiningDate
+2019/07/05 16:08:20 - Table input.0 - , ConfirmationDate
+2019/07/05 16:08:20 - Table input.0 - , ReportingManager
+2019/07/05 16:08:20 - Table input.0 - FROM employee
+2019/07/05 16:08:20 - Table input.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:08:20 - Table input.0 - Finished reading query, closing connection.
+2019/07/05 16:08:20 - sourcedatabase - Connection to database closed!
+2019/07/05 16:08:20 - Select values.0 - Got row from previous step: [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [0], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz]
+2019/07/05 16:08:20 - Table input.0 - Finished processing (I=2, O=0, R=0, W=2, U=0, E=0)
+2019/07/05 16:08:20 - Select values.0 - Wrote row to next step: [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz]
+2019/07/05 16:08:20 - Table output.0 - Prepared statement : INSERT INTO "sampleSchema".employee (empid, JoiningDate, ConfirmationDate, ReportingManager, departmentid) VALUES ( ?,  ?,  ?,  ?,  ?)
+2019/07/05 16:08:20 - Select values.0 - Got row from previous step: [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [0], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh]
+2019/07/05 16:08:20 - Table output.0 - Written row: [12ds], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz], [12]
+2019/07/05 16:08:20 - Select values.0 - Wrote row to next step: [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh]
+2019/07/05 16:08:20 - Concat Fields.0 - Wrote row #1 : [12ds], [vivek], [fdkbfsa], [fkdgfk], [123456], [fdhfgh], [12], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [xyz], [fdkbfsa-fkdgfk]
+2019/07/05 16:08:20 - Table output 2.0 - Prepared statement : INSERT INTO "sampleSchema".employeedetails (empdetailsid, EmpName, contactNumber, contactPerson, HasSpouse, address) VALUES ( ?,  ?,  ?,  ?,  ?,  ?)
+2019/07/05 16:08:20 - Table output.0 - Written row: [13fs], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh], [13]
+2019/07/05 16:08:20 - Select values.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:08:20 - Concat Fields.0 - Wrote row #2 : [13fs], [afgsg], [fsfsd], [fdzss], [765647], [fgdgd], [13], [N], [2012/02/22 00:00:00.000], [2012/08/22 00:00:00.000], [fgdgh], [fsfsd-fdzss]
+2019/07/05 16:08:20 - Table output 2.0 - Written row: [12ds], [vivek], [123456], [fdhfgh], [N], [fdkbfsa-fkdgfk]
+2019/07/05 16:08:20 - Select values.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2019/07/05 16:08:20 - Table output 2.0 - Written row: [13fs], [afgsg], [765647], [fgdgd], [N], [fsfsd-fdzss]
+2019/07/05 16:08:20 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:08:20 - Table output.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:08:20 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:08:20 - destinationdatabase - Connection to database closed!
+2019/07/05 16:08:20 - Table output.0 - Finished processing (I=0, O=2, R=2, W=2, U=0, E=0)
+2019/07/05 16:08:20 - Concat Fields.0 - Signaling 'output done' to 1 output rowsets.
+2019/07/05 16:08:20 - Concat Fields.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2019/07/05 16:08:20 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:08:20 - Table output 2.0 - Signaling 'output done' to 0 output rowsets.
+2019/07/05 16:08:20 - destinationdatabase - Commit on database connection [destinationdatabase]
+2019/07/05 16:08:20 - destinationdatabase - Connection to database closed!
+2019/07/05 16:08:20 - Table output 2.0 - Finished processing (I=0, O=2, R=2, W=2, U=0, E=0)
+
+2019-07-05 16:08:20.538  INFO 18088 --- [http-nio-8080-exec-2] c.d.i.service.util.ActivityUtil          : Next Step to trigger found : 2
+2019-07-05 16:08:20.627  INFO 18088 --- [ForkJoinPool-1-worker-3] c.d.i.s.impl.ENDActivityExecutorImpl     : END Step Executor,activityID = 2

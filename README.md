@@ -40,7 +40,8 @@ npm install -g @angular/cli
 
 - To run existing database transformation process from application, follow following rules:  
    - Create source database with name 'demo' in mysql using ~\Service\dataintegrationservice\src\main\DbScripts\SourceDbScript.sql.
-   - Create target database with name 'SamplePostgresDb' in postgress using    ~\Service\dataintegrationservice\src\main\DbScripts\TargetDbScript.sql.
+   - Create target database with name 'SamplePostgresDb' and schema with name 'sampleSchema' in postgress with owner as 'postgres'.  
+     Create tables using ~\Service\dataintegrationservice\src\main\DbScripts\TargetDbScript.  
    - Update application-dev file from ~\Service\dataintegrationservice\src\main\resources accordingly.  
 ### Setting up
 
