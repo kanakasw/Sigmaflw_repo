@@ -34,8 +34,11 @@ npm install -g @angular/cli
      
 - KTR Structure
   - Ktr file name has to be the process name.
-  - The format for input file to the KTR is {ProcessName}_input.{extension}.  
+  - The format for input file to the KTR is {ProcessName}_input.{extension}. 
   - Output of the KTR will be {ProcessName}_output.{extension}.
+  - Note: The name of the process must be same as the ktr file and the below mentioned path is mandatory for the .ktr files to execute.
+  
+    ![Ktr file path ](Web/src/assets/Screens/KtrFilePath.png "Sample KTR file path")
 
 - To run existing database transformation process from application, follow following rules:  
    - Create source database with name 'demo' in mysql using ~\Service\dataintegrationservice\src\main\DbScripts\SourceDbScript.sql.
@@ -47,8 +50,8 @@ npm install -g @angular/cli
 Here's a brief introduction  about what a user must do in order to start using the application further:
 
 ```bash
-git clone https://github.com/your/your-project.git
-cd your-project/Web
+git clone https://github.com/kanakasw/Sigmaflw_repo.git
+cd Sigmaflw_repo/Web
 npm install  
 Run ng serve  
 Navigate to http://localhost:4200/. 
@@ -60,7 +63,7 @@ Steps to Configure Data Integration Service.
 - Create database 'DataIntegrationServiceDev' for dev active profile with 'dataintegration' as username and 'root' as a password.
 
 ```bash
-cd Service/dataintegrationservice
+cd Sigmaflw_repo/Service/dataintegrationservice
 Execute command mvn clean install
 
 ```
@@ -97,7 +100,7 @@ Sigmaflw can be used to monitor data transformation processes which are integrat
 
 ## Contributing
 
-Please read [CONTRIBUTING.md]() for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/kanakasw/Kanaka_PDI/blob/master/Contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
