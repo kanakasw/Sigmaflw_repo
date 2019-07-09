@@ -102,5 +102,5 @@ Please read [CONTRIBUTING.md]() for details on our code of conduct, and the proc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](License.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](License) file for details
 
