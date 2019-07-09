@@ -1,7 +1,6 @@
-# Process Integration
+# Sigmaflw
 
-Process Integration is an open source application for data transformation.  
-It uses Pentaho Data Integration (PDI) tool for data transformation.  
+Sigmaflw is an open source application for monitoring data transformation processes created using Pentaho Data Integration (PDI) tool for data transformation.  
 
 
 ## Getting Started / Installation
@@ -81,16 +80,16 @@ User can change embeded tomcat server port by configuring "server.port" property
 ## Usage
 
 ### Features
-Process Integration supports two use cases  
-- File transformation (ex: csv to json)
-   - In file tranformation data will be Retrieving from a source file and transformed into the target file or database of user choice.  
-   - It supports sorting, filtering and various other operaions on data. 
-     
-- Database transformation (ex: MySQL to Postgres)
-  - In database transformation source database is transformed into target database of use choice.
-  - Data can be extracted from a table of source database and spreaded over multiple tables of a target database.
-
-
+Sigmaflw can be used to monitor data transformation processes which are integrated with execution of KTR files in the background
+  
+  - Process Management - Process can be created/ maintained inside Sigmaflw application, process execution can be scheduled at a particular time using cron expressions. There is KTR file creation and setup that needs to be done as a pre-requisite before execution and monitoring can be triggered
+  
+  - User Management - There are two users for this application i.e. admin user and application user. Admin user can create user account and assign user as a owner to a process. One user can be an owner of one or more processes, and such user will be able to monitor the owned process' execution status, make changes to process definition
+  
+  - Use case demonstrated - Data transformation from MySQL to Postgres. Data from source database (in this case MySQL) is transformed using KTR files in to target database (in this case Postgres). Data extraction, tranformation and loading is managed inside KTR file(s)
+ 
+  
+  
 ### Screens
   Sample ktr file for database to database tranformation.  
     
