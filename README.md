@@ -82,7 +82,7 @@ User can change embeded tomcat server port by configuring "server.port" property
 ### Features
 Sigmaflw can be used to monitor data transformation processes which are integrated with execution of KTR files in the background
   
-  - Process Management - Process can be created/ maintained inside Sigmaflw application, process execution can be scheduled at a particular time using cron expressions. There is KTR file creation and setup that needs to be done as a pre-requisite before execution and monitoring can be triggered
+  - Process Management - Process can be created/ maintained inside Sigmaflw application, process execution can be either executed manually or scheduled at a particular time using cron expressions. There is KTR file creation and setup that needs to be done as a pre-requisite before execution and monitoring can be triggered
   
   - User Management - There are two users for this application i.e. admin user and application user. Admin user can create user account and assign user as a owner to a process. One user can be an owner of one or more processes, and such user will be able to monitor the owned process' execution status, make changes to process definition
   
