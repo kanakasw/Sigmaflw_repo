@@ -34,9 +34,16 @@ npm install -g @angular/cli
      
 - KTR Structure
   - Ktr file name has to be the process name.
-  - The format for input file to the KTR is {ProcessName}_input.{extension}. 
+  - The format for input file to the KTR is {ProcessName}_input.{extension}.
   - Output of the KTR will be {ProcessName}_output.{extension}.
-  - Note: The name of the process must be same as the ktr file and the below mentioned path is mandatory for the .ktr files to execute.
+  - Please ensure that following folder structure should get created after cloning project.
+  
+    ![Default folder structure](Web/src/assets/Screens/DefaultFolderStructure.JPG "Default folder structure")
+   
+  - Process specific input and pentaho files should be placed in corresponding folder under default subscriber(Sub_1) as shown in     figure. For execution of default use case, after cloning process specific folder strcuture will be created i.e. folder Proc_1 will be created along with necessary folders inside it. Proc_1 describes process id where 1 indicates running serial number allocated to processes starting from 1 e.g. Proc_1, Proc_2, Proc_3 etc. 
+  
+   ![Process folder structure](Web/src/assets/Screens/ProcessFolderStructure.JPG "Process folder structure")
+  - Note: For the execution of given use case process, 'SampleDatabaseTranformation.ktr' should be present at following location.
   
     ![Ktr file path ](Web/src/assets/Screens/KtrFilePath.png "Sample KTR file path")
 
