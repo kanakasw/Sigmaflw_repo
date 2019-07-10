@@ -10,6 +10,40 @@ Sigmaflw is an open source application for monitoring data transformation proces
  This application is generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.    
  It uses SpringBoot, Spring REST, Spring Data JPA, Maven and Pentaho API to build Data Integration Service.  
 
+### Setting up
+Note: Follow the below prerequisites before setting up project.  
+Here's a brief introduction  about what a user must do in order to start using the application further:
+
+```bash
+git clone https://github.com/kanakasw/Sigmaflw_repo.git
+cd Sigmaflw_repo/Web
+npm install  
+Run ng serve  
+Navigate to http://localhost:4200/. 
+``` 
+
+
+Steps to Configure Data Integration Service.  
+
+- Create database 'DataIntegrationServiceDev' for dev active profile with 'dataintegration' as username and 'root' as a password.
+
+```bash
+cd Sigmaflw_repo/Service/dataintegrationservice
+Execute command mvn clean install
+
+```
+- There are multiple ways to start service  
+
+  -  Execute command in the location of dataintegrationservice-1.0.0.jar.    
+     java -jar -Dspring.profiles.active=dev dataintegrationservice-1.0.0.jar.    
+     Possible values for profiles.active = dev, test, production  
+
+  -  Import project in eclipse and right click on DataIntegrationApplication.java, Run as Java Application.
+
+Default server port is 8080.  
+User can change embeded tomcat server port by configuring "server.port" property in application-{profile}.properties file.  
+
+
 ### Prerequisites
 - Node.js need to be installed on local machine to run npm commands required for the configuration of the application.  
    install [node.js](https://nodejs.org/en/) here.  
@@ -52,40 +86,6 @@ npm install -g @angular/cli
    - Create target database with name 'SamplePostgresDb' and schema with name 'sampleSchema' in postgress with owner as 'postgres'.  
      Create tables using ~\Service\dataintegrationservice\src\main\DbScripts\TargetDbScript.  
    - Update application-dev file from ~\Service\dataintegrationservice\src\main\resources accordingly.  
-### Setting up
-
-Here's a brief introduction  about what a user must do in order to start using the application further:
-
-```bash
-git clone https://github.com/kanakasw/Sigmaflw_repo.git
-cd Sigmaflw_repo/Web
-npm install  
-Run ng serve  
-Navigate to http://localhost:4200/. 
-``` 
-
-
-Steps to Configure Data Integration Service.  
-
-- Create database 'DataIntegrationServiceDev' for dev active profile with 'dataintegration' as username and 'root' as a password.
-
-```bash
-cd Sigmaflw_repo/Service/dataintegrationservice
-Execute command mvn clean install
-
-```
-- There are multiple ways to start service  
-
-  -  Execute command in the location of dataintegrationservice-1.0.0.jar.    
-     java -jar -Dspring.profiles.active=dev dataintegrationservice-1.0.0.jar.    
-     Possible values for profiles.active = dev, test, production  
-
-  -  Import project in eclipse and right click on DataIntegrationApplication.java, Run as Java Application.
-
-Default server port is 8080.  
-User can change embeded tomcat server port by configuring "server.port" property in application-{profile}.properties file.  
-
-
 
 ## Usage
 
