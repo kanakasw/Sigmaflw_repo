@@ -11,7 +11,7 @@ Sigmaflw is an open source application for monitoring data transformation proces
  It uses SpringBoot, Spring REST, Spring Data JPA, Maven and Pentaho API to build Data Integration Service.  
 
 ### Setting up
-Note: Follow the below prerequisites before setting up project.  
+Please read through section "Prerequisites", this will help to validate steps mentioned in this section.  
 Here's a brief introduction  about what a user must do in order to start using the application further:
 
 ```bash
