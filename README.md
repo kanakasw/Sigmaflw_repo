@@ -27,6 +27,10 @@ Steps to Configure Data Integration Service.
 
 - Create database 'DataIntegrationServiceDev' for dev active profile with 'dataintegration' as username and 'root' as a password.
 
+- Update file pg_hba.conf located under C:\Program Files\PostgreSQL\11\data folder to inlcude IP address of the machine on which PostgreSQL DB is installed
+
+- Give all permissions to user 'dataintegration' 
+
 ```bash
 cd Sigmaflw_repo/Service/dataintegrationservice
 Execute command mvn clean install
@@ -55,11 +59,12 @@ npm install -g @angular/cli
 - Java (version 8) and [maven](http://maven.apache.org/download.cgi) has to be installed on local machine.  
 - Postgres need to be installed on local machine on port 5432.
 - Pentaho Data Integration Tool need to be installed on local machine.To know more about Pentaho Data Integration goto [Pentaho Data Integration](https://help.pentaho.com/Documentation/7.1/0D0/Pentaho_Data_Integration).  
- After installation complete, Update application property to
+ After installation is complete, update the application property as mentioned below. This property file can be located under Service/dataintergrationservice/src/main/resources folder. 
 
 ```bash
   pentaho.plugin = [provide path pentaho/plugins]
 ```
+  
   
 - Kettle Transformation(KTR) Management([ what is ktr? ]()):
    - ktr files are generated as output of PDI Tranformations which provides data mining and extract, transform, load (ETL) capabilities. 
@@ -84,8 +89,10 @@ npm install -g @angular/cli
 - To run existing database transformation process from application, follow following rules:  
    - Create source database with name 'demo' in mysql using ~\Service\dataintegrationservice\src\main\DbScripts\SourceDbScript.sql.
    - Create target database with name 'SamplePostgresDb' and schema with name 'sampleSchema' in postgress with owner as 'postgres'.  
-     Create tables using ~\Service\dataintegrationservice\src\main\DbScripts\TargetDbScript.  
+   - Create tables using ~\Service\dataintegrationservice\src\main\DbScripts\TargetDbScript.  
+   - Give all permissions to user postgres
    - Update application-dev file from ~\Service\dataintegrationservice\src\main\resources accordingly.  
+   
 
 ## Usage
 
